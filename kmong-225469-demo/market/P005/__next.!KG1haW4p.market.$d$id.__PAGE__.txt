@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[42581,["/demos/kmong-225469-demo/_next/static/chunks/0j3g5k42dv9hm.js","/demos/kmong-225469-demo/_next/static/chunks/0d3shmwh5_nmn.js","/demos/kmong-225469-demo/_next/static/chunks/0g5xc1v1.td~~.js","/demos/kmong-225469-demo/_next/static/chunks/14miy6aoehtry.js"],"default"]
+3:I[97367,["/demos/kmong-225469-demo/_next/static/chunks/0j3g5k42dv9hm.js","/demos/kmong-225469-demo/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"product":{"id":"P005","name":"코엔자임Q10 플러스","price":35000,"subscriptionPrice":28000,"category":"항산화","ingredients":["코엔자임Q10 100mg","비타민E","셀레늄"],"rating":4.8,"reviewCount":267,"description":"세포 에너지 생성과 강력한 항산화 보호"}}],[["$","script","script-0",{"src":"/demos/kmong-225469-demo/_next/static/chunks/14miy6aoehtry.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"mZIKz9franiTdU8g6x1_K"}
+5:null
