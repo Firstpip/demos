@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[97367,["/demos/kmong-225708-demo/_next/static/chunks/0dbhjjzl8qfwv.js"],"ViewportBoundary"]
-3:I[97367,["/demos/kmong-225708-demo/_next/static/chunks/0dbhjjzl8qfwv.js"],"MetadataBoundary"]
+2:I[91579,["/demos/kmong-225708-demo/_next/static/chunks/0snu_d8bo0moc.js"],"ViewportBoundary"]
+3:I[91579,["/demos/kmong-225708-demo/_next/static/chunks/0snu_d8bo0moc.js"],"MetadataBoundary"]
 4:"$Sreact.suspense"
-5:I[27201,["/demos/kmong-225708-demo/_next/static/chunks/0dbhjjzl8qfwv.js"],"IconMark"]
-0:{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"헤어로그 - 시술 기록 관리"}],["$","meta","1",{"name":"description","content":"헤어 디자이너 시술 기록 관리 앱 데모"}],["$","link","2",{"rel":"icon","href":"/demos/kmong-225708-demo/favicon.ico?favicon.0x3dzn~oxb6tn.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L5","3",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hJR9gR7-lT0TLk8qz2dt6"}
+5:I[56154,["/demos/kmong-225708-demo/_next/static/chunks/0snu_d8bo0moc.js"],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"헤어로그 - 시술 기록 관리"}],["$","meta","1",{"name":"description","content":"헤어 디자이너 시술 기록 관리 앱 데모"}],["$","link","2",{"rel":"icon","href":"/demos/kmong-225708-demo/favicon.ico?favicon.0x3dzn~oxb6tn.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L5","3",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"VDzK3JsTItc337cLPG-bO"}
