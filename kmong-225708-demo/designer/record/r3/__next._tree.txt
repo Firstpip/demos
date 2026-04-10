@@ -1,3 +1,3 @@
-:HL["/demos/kmong-225708-demo/_next/static/chunks/0_-r1r1x4g1~x.css","style"]
+:HL["/demos/kmong-225708-demo/_next/static/chunks/0~bm~kpwqri-a.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"designer","param":null,"prefetchHints":0,"slots":{"children":{"name":"record","param":null,"prefetchHints":0,"slots":{"children":{"name":"id","param":{"type":"d","key":"r3","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"KcRW5tUUEX8xe59frtyQN"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"designer","param":null,"prefetchHints":0,"slots":{"children":{"name":"record","param":null,"prefetchHints":0,"slots":{"children":{"name":"id","param":{"type":"d","key":"r3","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"9AwMieTZasa1jNxZmp_2_"}
