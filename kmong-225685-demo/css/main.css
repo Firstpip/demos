@@ -245,7 +245,7 @@ h3 { font-size: 22px; }
 }
 
 /* Partners */
-.partners { padding: 72px 0; background: var(--color-bg-soft); }
+.partners { padding: 72px 0; background: #F1F5F9; }
 .partners-lead {
   text-align: center;
   font-size: 15px;
