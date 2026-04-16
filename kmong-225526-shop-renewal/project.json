@@ -2,7 +2,11 @@
   "title": "쇼핑몰 자체구축 리뉴얼",
   "description": "빌더 기반 쇼핑몰을 자체 구축으로 리뉴얼하고 데이터베이스 이관",
   "pages": 7,
-  "techStack": ["Next.js", "React Quill"],
+  "techStack": [
+    "Next.js",
+    "React Quill"
+  ],
   "category": "ecommerce",
-  "color": "#7c3aed"
+  "color": "#7c3aed",
+  "thumbnail": "homepage.png"
 }
