@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SafeWorks 요금 안내 — Starter, Pro, Enterprise 플랜 상세 비교와 자주 묻는 질문.">
+<title>요금 안내 — SafeWorks</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/subpages.css">
+</head>
+<body>
+<div id="layout-header"></div>
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">요금 안내</span>
+    <h1>현장 규모에 맞는<br/>합리적인 요금제</h1>
+    <p>안전·문서 디지털화를 위한 월간 구독. 언제든 해지할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="pricing" style="background: transparent;">
+  <div class="container">
+    <div class="pricing-toggle-wrap">
+      <div class="pricing-toggle" role="tablist">
+        <button type="button" data-billing="monthly" class="active">월간 결제</button>
+        <button type="button" data-billing="yearly">연간 결제 <span class="pricing-badge-save">-20%</span></button>
+      </div>
+    </div>
+    <div class="pricing-grid" id="pricing-plans">
+      <div class="plan-card" data-plan="starter">
+        <div class="plan-name">Starter</div>
+        <div class="plan-tagline">소규모 현장 1곳을 위한 기본 패키지</div>
+        <div class="plan-price" data-monthly="1,900" data-yearly="1,520">1,900<span class="plan-price-suffix">원/월/인</span></div>
+        <div class="plan-price-hint">부가세 별도 · 최소 10인부터</div>
+        <ul class="plan-features">
+          <li>현장 1개, 작업자 50명까지</li>
+          <li>QR 출입 관리</li>
+          <li>기본 안전 알림</li>
+          <li>월간 리포트</li>
+          <li>이메일 지원</li>
+        </ul>
+        <a href="/support/#use" class="btn btn-secondary" style="width:100%;">서비스 이용하기</a>
+      </div>
+      <div class="plan-card featured" data-plan="pro">
+        <div class="plan-badge">가장 많이 선택</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-tagline">중대형 현장을 위한 추천 플랜</div>
+        <div class="plan-price" data-monthly="2,400" data-yearly="1,920">2,400<span class="plan-price-suffix">원/월/인</span></div>
+        <div class="plan-price-hint">부가세 별도 · 최소 30인부터</div>
+        <ul class="plan-features">
+          <li>현장 5개, 작업자 300명까지</li>
+          <li>QR + 얼굴 인식 출입</li>
+          <li>웨어러블 연동 모니터링</li>
+          <li>실시간 푸시 알림</li>
+          <li>안전 데이터 분석 대시보드</li>
+          <li>전담 매니저 배정</li>
+        </ul>
+        <a href="/support/#use" class="btn btn-primary" style="width:100%;">서비스 이용하기</a>
+      </div>
+      <div class="plan-card" data-plan="enterprise">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-tagline">대규모 현장·그룹사 맞춤 패키지</div>
+        <div class="plan-price">문의</div>
+        <div class="plan-price-hint">SLA · 전용 인프라 · ERP 연동</div>
+        <ul class="plan-features">
+          <li>무제한 현장 · 무제한 작업자</li>
+          <li>전용 인프라 (On-premise 가능)</li>
+          <li>ERP · 안전보건공단 연동</li>
+          <li>맞춤 보안 정책</li>
+          <li>24/7 전담 지원</li>
+          <li>온사이트 교육 제공</li>
+        </ul>
+        <a href="/support/#quote" class="btn btn-secondary" style="width:100%;">견적 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--color-bg-soft);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">기능 비교</span>
+      <h2>플랜별 상세 기능</h2>
+    </div>
+    <div class="compare-table-wrap" id="pricing-compare">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>기능</th>
+            <th>Starter</th>
+            <th class="featured">Pro</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>현장 수</td><td>1</td><td class="check">5</td><td class="check">무제한</td></tr>
+          <tr><td>작업자 수</td><td>50명</td><td class="check">300명</td><td class="check">무제한</td></tr>
+          <tr><td>QR 출입</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>얼굴 인식 출입</td><td class="dash">-</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>웨어러블 모니터링</td><td class="dash">-</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>실시간 푸시 알림</td><td class="dash">-</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>SMS/Slack 알림</td><td class="dash">-</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>데이터 분석 대시보드</td><td class="dash">-</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>ERP / 공단 연동</td><td class="dash">-</td><td class="dash">-</td><td class="check">✓</td></tr>
+          <tr><td>전용 인프라</td><td class="dash">-</td><td class="dash">-</td><td class="check">✓</td></tr>
+          <tr><td>온사이트 교육</td><td class="dash">-</td><td class="dash">-</td><td class="check">✓</td></tr>
+          <tr><td>지원</td><td>이메일</td><td class="check">전담 매니저</td><td class="check">24/7</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">자주 묻는 질문</span>
+      <h2>요금제 FAQ</h2>
+    </div>
+    <div class="faq-list" id="pricing-faq">
+      <details class="faq-item">
+        <summary>서비스 이용 신청은 어떻게 하나요?</summary>
+        <div class="faq-body">고객지원 페이지의 "서비스 이용하기" 탭에서 소속, 이름, 연락처, 이메일, 문의 내용을 입력하시면 영업일 1일 이내 담당자가 연락드려 현장 규모에 맞는 도입 절차를 안내해드립니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>최소 계약 기간이 있나요?</summary>
+        <div class="faq-body">월간 결제는 최소 계약 기간이 없으며, 연간 결제는 1년 단위 계약입니다. 연간 결제는 월간 대비 20% 할인이 적용됩니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>작업자 수가 월별로 바뀌면 어떻게 되나요?</summary>
+        <div class="faq-body">월말 기준 활성 작업자 수로 자동 정산됩니다. 계절성 공사로 인원이 급변하는 경우에도 유연하게 대응할 수 있습니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>세금계산서 발행이 가능한가요?</summary>
+        <div class="faq-body">네, 결제 시 사업자 정보를 등록하시면 월말에 자동으로 세금계산서가 발행됩니다. 부가세는 별도입니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>웨어러블 장비는 별도 구매해야 하나요?</summary>
+        <div class="faq-body">Pro 플랜부터 웨어러블 장비 렌탈(월 5,000원/대)을 제공합니다. 자체 보유 장비가 있다면 연동 지원도 가능합니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Enterprise 플랜의 On-premise 구축은 어떻게 진행되나요?</summary>
+        <div class="faq-body">고객사 내부 서버 또는 VPC에 SafeWorks를 배포합니다. 보통 2~4주가 소요되며, 전담 엔지니어가 구축·이관·교육을 지원합니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>요금제 업/다운그레이드가 가능한가요?</summary>
+        <div class="faq-body">언제든 업그레이드 가능하며, 즉시 적용됩니다. 다운그레이드는 다음 결제 주기부터 적용됩니다.</div>
+      </details>
+      <details class="faq-item">
+        <summary>해지 절차는 어떻게 되나요?</summary>
+        <div class="faq-body">고객지원 페이지 또는 전담 매니저를 통해 해지 요청하시면, 데이터 백업본 제공 후 계정이 종료됩니다. 해지 위약금은 없습니다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>아직 고민되시나요?</h2>
+    <p>30분 상담으로 귀사 현장에 가장 적합한 플랜을 제안해드립니다.</p>
+    <a href="/support/#use" class="btn btn-primary btn-lg">서비스 이용하기</a>
+      <a href="/support/#quote" class="btn btn-secondary btn-lg" style="margin-left:8px;">견적 문의</a>
+  </div>
+</section>
+
+</main>
+<div id="layout-footer"></div>
+<script src="../js/common.js"></script>
+<script>
+// Pricing toggle
+document.querySelectorAll('.pricing-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pricing-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const billing = btn.dataset.billing;
+    document.querySelectorAll('.plan-price[data-monthly]').forEach(el => {
+      const val = billing === 'monthly' ? el.dataset.monthly : el.dataset.yearly;
+      el.innerHTML = `${val}<span class="plan-price-suffix">원/월/인</span>`;
+    });
+  });
+});
+</script>
+</body>
+</html>

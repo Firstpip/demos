@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>SafeWorks 랜딩페이지 제안서</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root {
+  --color-primary: #2B6CDF;
+  --color-primary-dark: #1E4FAE;
+  --color-primary-light: #E8F0FF;
+  --color-accent: #FFCC00;
+  --color-text: #0F172A;
+  --color-text-soft: #475569;
+  --color-text-mute: #94A3B8;
+  --color-border: #E2E8F0;
+  --color-bg-soft: #F8FAFC;
+  --color-bg-dark: #0F172A;
+  --color-bg-cover: linear-gradient(135deg, #0F2341 0%, #163A5F 50%, #1F4E7A 100%);
+  --color-success: #10B981;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { font-family: 'Pretendard Variable', Pretendard, sans-serif; color: var(--color-text); -webkit-font-smoothing: antialiased; }
+body { background: #f1f5f9; }
+
+.page {
+  width: 1123px;
+  height: 794px;
+  background: #fff;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 64px 48px;
+}
+.page:last-child { page-break-after: auto; }
+@media print {
+  body { background: #fff; }
+  .page { box-shadow: none; }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 28px;
+  flex-shrink: 0;
+}
+.page-title { font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: var(--color-text); }
+.page-num { font-size: 13px; color: var(--color-text-mute); font-weight: 500; }
+
+.page-body { flex: 1; display: flex; flex-direction: column; gap: 18px; min-height: 0; }
+
+p { font-size: 13px; line-height: 1.7; color: var(--color-text-soft); }
+small { font-size: 11px; color: var(--color-text-mute); }
+h2 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+h3 { font-size: 14px; font-weight: 700; }
+h4 { font-size: 13px; font-weight: 700; }
+
+.cover {
+  padding: 0;
+  background: var(--color-bg-cover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(43,108,223,.25), transparent 60%);
+  filter: blur(20px);
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(124,58,237,.18), transparent 60%);
+  filter: blur(30px);
+}
+.cover-inner { text-align: center; color: #fff; position: relative; z-index: 1; }
+.cover-eyebrow { font-size: 14px; letter-spacing: .6em; color: rgba(255,255,255,.55); font-weight: 500; margin-bottom: 38px; padding-left: .6em; }
+.cover-title { font-size: 48px; font-weight: 800; line-height: 1.3; letter-spacing: -.015em; color: #fff; }
+.cover-divider { width: 64px; height: 1px; background: rgba(255,255,255,.4); margin: 36px auto; }
+.cover-sub { font-size: 16px; color: rgba(255,255,255,.7); font-weight: 400; }
+
+.lead-box {
+  background: var(--color-bg-soft);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-text-soft);
+}
+.lead-box strong { color: var(--color-text); font-weight: 700; }
+.warn-box {
+  background: #FFFBEA;
+  border-left: 3px solid #F59E0B;
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #92400E;
+}
+.warn-box strong { color: #78350F; }
+
+.section-label { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 14px; }
+
+.req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
+.req-item { display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; color: var(--color-text); padding: 4px 0; }
+.req-item::before {
+  content: '';
+  width: 14px; height: 14px;
+  background: var(--color-success);
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cap-card { background: var(--color-bg-soft); border-radius: 8px; padding: 16px 18px; }
+.cap-card h4 { font-size: 13px; margin-bottom: 6px; }
+.cap-card p { font-size: 12px; line-height: 1.6; }
+
+.diff-card { background: var(--color-bg-soft); border-radius: 8px; padding: 22px 26px; }
+.diff-card .title { font-size: 17px; font-weight: 800; color: var(--color-text); margin-bottom: 4px; }
+.diff-card .meta { font-size: 12px; color: var(--color-text-soft); margin-bottom: 12px; }
+.diff-card .desc { font-size: 13px; line-height: 1.7; color: var(--color-text-soft); margin-bottom: 16px; }
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag {
+  background: var(--color-bg-dark);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.tag.outline { background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary); }
+
+.relevance-list { display: flex; flex-direction: column; gap: 12px; }
+.relevance-item { display: flex; gap: 14px; align-items: flex-start; font-size: 12.5px; }
+.relevance-item .chip {
+  background: var(--color-bg-dark);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.relevance-item .text { color: var(--color-text-soft); line-height: 1.6; }
+.relevance-item .text strong { color: var(--color-text); font-weight: 700; }
+
+.plan-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.plan-table thead th {
+  background: var(--color-bg-soft);
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.plan-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+.plan-table .week { font-weight: 700; color: var(--color-text); width: 110px; }
+.plan-table .stage { font-weight: 600; color: var(--color-text); width: 200px; line-height: 1.5; }
+
+.stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stack-card { background: var(--color-bg-soft); border-radius: 8px; padding: 18px 22px; }
+.stack-cat-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.stack-cat { font-size: 14px; font-weight: 800; color: var(--color-text); }
+.stack-name { font-size: 12.5px; color: var(--color-text-soft); font-weight: 500; }
+.stack-desc { font-size: 12px; line-height: 1.6; color: var(--color-text-soft); }
+
+/* 데모 그리드 — 워크플로우 규칙: 페이지당 2x2, 이미지 높이 고정값(210px) + object-fit: contain */
+.demo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px 28px;
+  align-content: start;
+}
+.demo-shot { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.demo-shot-img-wrap {
+  height: 210px;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-shot-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+}
+.demo-shot-caption { text-align: center; }
+.demo-shot-caption .name { font-size: 13.5px; font-weight: 700; color: var(--color-text); }
+.demo-shot-caption .desc { font-size: 11.5px; color: var(--color-text-mute); margin-top: 3px; line-height: 1.5; }
+
+.access-grid { display: grid; grid-template-columns: 1fr 240px; gap: 36px; flex: 1; }
+.url-label { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--color-text); }
+.url-box {
+  background: var(--color-bg-soft);
+  border-left: 3px solid var(--color-primary);
+  padding: 16px 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  word-break: break-all;
+  margin-bottom: 28px;
+}
+.url-box a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.access-steps { display: flex; flex-direction: column; gap: 16px; }
+.access-step { display: grid; grid-template-columns: 32px 1fr; gap: 14px; align-items: flex-start; }
+.access-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--color-bg-dark); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+.access-step-name { font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 3px; }
+.access-step-desc { font-size: 11.5px; color: var(--color-text-mute); line-height: 1.5; }
+.qr-area { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.qr-grid {
+  width: 180px; height: 180px;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  display: block;
+}
+.qr-grid img { width: 100%; height: 100%; display: block; }
+.qr-label { font-size: 11px; color: var(--color-text-mute); }
+
+.flow-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 22px;
+  margin-top: 24px;
+}
+.flow-title { font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+.flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.flow-item { font-size: 11.5px; color: var(--color-text-soft); line-height: 1.6; }
+.flow-item strong { color: var(--color-text); font-weight: 700; }
+
+</style>
+</head>
+<body>
+
+<!-- Page 1: 표지 -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">P R O P O S A L</div>
+    <h1 class="cover-title">SafeWorks<br/>안전·문서 관리 솔루션 랜딩 페이지</h1>
+    <div class="cover-divider"></div>
+    <div class="cover-sub">제안서</div>
+  </div>
+</section>
+
+<!-- Page 2: 프로젝트 이해도 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">프로젝트 이해도</div><div class="page-num">02 / 09</div></div>
+  <div class="page-body">
+    <div class="lead-box"><strong>의뢰 핵심:</strong> 신규 솔루션 SafeWorks의 단독 랜딩페이지를 영업 지원·전환 유도 목적으로 제작합니다. 의뢰 본문에 명시된 메인 6섹션, 서브 4메뉴, 섹션별 참고 사이트(마키나락스/Dooray/무스마)와 폼 5필드(소속/이름/연락처/이메일/문의 내용)를 100% 반영합니다.</div>
+
+    <div class="section-label">주요 요구사항</div>
+    <div class="req-grid">
+      <div class="req-item">히어로 배너 (대시보드 UI + 서비스 이용하기/견적 문의)</div>
+      <div class="req-item">서비스 소개 (솔루션 설명 + 홍보영상 + 브로슈어)</div>
+      <div class="req-item">신뢰도 (마키나락스 등 주요 고객사 로고)</div>
+      <div class="req-item">요금 안내 (구독 모델 단가 정보)</div>
+      <div class="req-item">제품 소개 (Dooray 스타일 페이지 롤링)</div>
+      <div class="req-item">다운로드 (사용자 매뉴얼·가이드라인 자료실)</div>
+      <div class="req-item">요금 안내 (월/연 비교 + 우측 반복 CTA)</div>
+      <div class="req-item">고객지원 (FAQ 아코디언 + 도입문의 Form)</div>
+      <div class="req-item">이용 사례 (실제 도입 사례 이미지+텍스트)</div>
+      <div class="req-item">관리자 메일 발송 기능 (Node.js + MySQL)</div>
+      <div class="req-item">플로팅 배너 (브로슈어 다운로드 퀵 버튼)</div>
+      <div class="req-item">모바일 반응형 웹디자인</div>
+    </div>
+
+    <div class="section-label" style="margin-top: 6px;">핵심 역량</div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <h4>의뢰 본문 1:1 매핑</h4>
+        <p>섹션 순서, CTA 라벨("서비스 이용하기"/"견적 문의"), 참고 사이트, 폼 필드까지 본문 그대로 구현. 임의 해석 없음.</p>
+      </div>
+      <div class="cap-card">
+        <h4>의뢰 명시 스택 100% 준수</h4>
+        <p>HTML, CSS, JavaScript, Node.js, MySQL, Figma. 추가 프레임워크 없이 인수인계와 유지보수가 쉬운 네이티브 구조.</p>
+      </div>
+      <div class="cap-card">
+        <h4>실제 동작 데모 사전 제공</h4>
+        <p>제안 단계에서 메인 8섹션 + 서브 4페이지 + 30개 인터랙션이 동작하는 데모를 GitHub Pages에 미리 배포했습니다.</p>
+      </div>
+      <div class="cap-card">
+        <h4>인수인계 + 6개월 무상 유지보수</h4>
+        <p>코드·DB 스키마·배포 가이드까지 정리해 인계해 드리고, 납품 후 6개월간 발견되는 이슈는 무상으로 수정해 드립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 3: 차별점 (유사 경험 자리) -->
+<section class="page">
+  <div class="page-header"><div class="page-title">차별점</div><div class="page-num">03 / 09</div></div>
+  <div class="page-body">
+    <div class="diff-card">
+      <div class="title">제안 단계에서 14페이지 데모를 직접 보여드립니다</div>
+      <div class="meta">메인 8섹션 + 서브 4페이지 + 30개 인터랙션 자동 검증 통과 · GitHub Pages 즉시 접속 가능</div>
+      <div class="desc">대부분의 제안자는 글로 약속하지만, 저는 만든 결과물로 보여드립니다. 의뢰인이 명시한 섹션 순서·참고 사이트(마키나락스 / Dooray / 무스마) 패턴, CTA 라벨, 5필드 폼까지 본문 그대로 1:1 매핑한 상태로 데모가 이미 준비되어 있습니다.</div>
+      <div class="tag-row">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">Vanilla JS</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Figma</span>
+        <span class="tag outline">데모 사전 제공</span>
+        <span class="tag outline">반응형 3종 검증</span>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:8px;">SafeWorks 관점에서의 강점</div>
+    <div class="relevance-list">
+      <div class="relevance-item"><span class="chip">콘텐츠 분석</span><span class="text">크몽 본문·Figma 기획서·영신디엔씨 공식 영상까지 분석해 <strong>SafeWorks가 "안전 + 문서 관리 통합" 솔루션</strong>임을 정확히 파악. 카피·UI 목업·기능 설명에 일관 반영.</span></div>
+      <div class="relevance-item"><span class="chip">참고 사이트</span><span class="text">메인 배너는 마키나락스, 제품 소개는 Dooray sticky 롤링, 요금 안내는 무스마 우측 반복 CTA로 <strong>의뢰인이 짚어준 3개 사이트 패턴 그대로 reproduce</strong>.</span></div>
+      <div class="relevance-item"><span class="chip">핵심 카피</span><span class="text">영상의 핵심 메시지 <strong>"안전은 대응이 아닌, 예방입니다"</strong>를 히어로 카피로 채택. "현장은 안전하게, 관리자는 편리하게, 기업은 탄탄하게" 최종 CTA에 반영.</span></div>
+      <div class="relevance-item"><span class="chip">요구사항</span><span class="text">폼은 의뢰 명시 그대로 <strong>소속 / 이름 / 연락처 / 이메일 / 문의 내용 5필드</strong>. 임의 추가 없음. 관리자 메일 발송은 Node + Nodemailer로 구현.</span></div>
+      <div class="relevance-item"><span class="chip">옵션 안내</span><span class="text">의뢰인 요청대로 <strong>풀버전(2,700,000원)과 원페이지(2,000,000원)</strong> 두 옵션의 가격 차이를 명시. 부가세 별도, 세금계산서 발행 가능.</span></div>
+      <div class="relevance-item"><span class="chip">품질</span><span class="text">데스크톱(1440) / 태블릿(768) / 모바일(375) 3종 뷰포트와 30개 인터랙션을 <strong>Puppeteer로 자동 검증</strong>해 매일 동작 보장.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 4: 구현 계획 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">구현 계획</div><div class="page-num">04 / 09</div></div>
+  <div class="page-body">
+    <p style="font-size:13px;">총 <strong style="color:var(--color-text);">29일(약 4주)</strong> 일정으로 진행하며, 핵심 UI·페이지 우선 구현 후 백엔드 API와 외부 연동을 마지막 주에 집중합니다. (2026.04.20 ~ 2026.05.19)</p>
+
+    <table class="plan-table">
+      <thead><tr><th>기간</th><th>단계</th><th>세부 내용</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="week">1주차 (1~7일)</td>
+          <td class="stage">기획 확정 + 디자인 시스템 + 메인 마크업</td>
+          <td>Figma 기준 디자인 토큰 추출 (컬러/폰트/간격/radius), 메인 헤더·푸터 공통 컴포넌트, 히어로 배너 + 신뢰도 슬라이더 + 통계 섹션 구현</td>
+        </tr>
+        <tr>
+          <td class="week">2주차 (8~15일)</td>
+          <td class="stage">메인 100% + 서브페이지 30%</td>
+          <td>제품 소개 sticky 롤링(좌 UI / 우 설명), 요금 안내 + 우측 반복 CTA, 이용 사례 카드, 홍보영상 모달, 브로슈어 다운로드, 플로팅 배너, 최종 CTA</td>
+        </tr>
+        <tr>
+          <td class="week">3주차 (16~22일)</td>
+          <td class="stage">서브 4페이지 100% + Node.js + MySQL</td>
+          <td>서비스 소개·요금 안내·다운로드(매뉴얼·가이드라인)·고객지원(FAQ + Form). Express API, MySQL 스키마, 도입문의 저장 + 관리자 메일 발송(Nodemailer)</td>
+        </tr>
+        <tr>
+          <td class="week">4주차 (23~29일)</td>
+          <td class="stage">반응형 검증 + 피드백 + 배포</td>
+          <td>데스크톱/태블릿/모바일 3종 깨짐 검사, SEO 메타·OG·sitemap, 의뢰인 피드백 2회 반영, Railway/Lightsail 배포, SSL·도메인 연결, 인수인계 문서</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box"><strong>사전 준비 요청:</strong> Figma 풀 액세스 권한, 협력사 로고 파일(영신디엔씨 + 주요 고객사), 홍보 영상 YouTube ID(또는 자체 호스팅 파일), 관리자 알림용 이메일 주소·SMTP 설정을 착수 전에 공유해주시면 일정 리스크를 최소화할 수 있습니다.</div>
+  </div>
+</section>
+
+<!-- Page 5: 제안 기술스택 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">제안 기술스택</div><div class="page-num">05 / 09</div></div>
+  <div class="page-body">
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Frontend</div><div class="stack-name">HTML5 + CSS3 + Vanilla JavaScript</div></div>
+        <div class="stack-desc">의뢰 명시 스택 그대로. section/article/nav 시맨틱 HTML로 SEO에 유리하고, CSS 변수 기반 디자인 시스템으로 컬러·간격·radius 일관성을 보장합니다. 빌드 단계 없는 정적 구조.</div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Backend</div><div class="stack-name">Node.js 20 + Express</div></div>
+        <div class="stack-desc">의뢰 명시 스택. 도입문의 폼 저장, 관리자 메일 발송(Nodemailer), 자료실 메타 조회 등 경량 REST API로 구현합니다. 인수인계가 쉬운 구조.</div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Database</div><div class="stack-name">MySQL 8</div></div>
+        <div class="stack-desc">의뢰 명시 스택. inquiries(도입문의), resources(자료 메타) 등 단순 스키마. mysql2 또는 Prisma 드라이버로 안정적 운영. 자동 백업 설정.</div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Infra · Deploy</div><div class="stack-name">Railway · Seoul Region</div></div>
+        <div class="stack-desc">국내 트래픽 최적화. SSL 자동 발급, MySQL 포함 월 $5~15. cron job 지원으로 자동 발송 등 백그라운드 작업도 쉽게 구성. AWS Lightsail Seoul 대안 제공 가능.</div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Form · Email</div><div class="stack-name">Nodemailer + 관리자 메일 발송</div></div>
+        <div class="stack-desc">도입문의 Form 제출 시 관리자에게 즉시 메일 알림. 의뢰인 SMTP(회사 메일 서버 또는 Gmail/Naver Workplace) 연동. 신청 이력은 MySQL에도 저장.</div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-cat-row"><div class="stack-cat">Quality</div><div class="stack-name">Puppeteer 자동 검증</div></div>
+        <div class="stack-desc">메인·서브·반응형 30개 인터랙션을 매 빌드마다 자동 검증해 회귀를 막습니다. 의뢰인은 매일 정상 동작하는 데모 URL을 받습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 6: 데모 소개 (1) — 메인 상단 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">데모 소개</div><div class="page-num">06 / 09</div></div>
+  <div class="page-body">
+    <div class="lead-box">실제 동작하는 데모를 미리 준비했습니다. 제안 단계에서 완성도를 직접 확인하실 수 있습니다.</div>
+    <div class="demo-grid">
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-hero.png" alt="히어로"></div>
+        <div class="demo-shot-caption"><div class="name">히어로 배너</div><div class="desc">대시보드 UI + "서비스 이용하기/견적 문의" + 배너 아래 고객사 로고</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-partners.png" alt="신뢰도 섹션"></div>
+        <div class="demo-shot-caption"><div class="name">신뢰도 섹션</div><div class="desc">마키나락스 외 고객사 로고 슬라이더 + 통계 수치 (현장/작업자/사고 감소)</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-features.png" alt="제품 소개 롤링"></div>
+        <div class="demo-shot-caption"><div class="name">제품 소개 (페이지 롤링)</div><div class="desc">좌측 UI 이미지 sticky / 우측 설명 텍스트, 4개 핵심 기능 전환</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-pricing.png" alt="요금 안내"></div>
+        <div class="demo-shot-caption"><div class="name">요금 안내 (사이드바 CTA)</div><div class="desc">3개 플랜 + 우측 sticky "서비스 이용하기/견적 문의" 반복 + 브로슈어 다운로드</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 7: 데모 소개 (2) — 메인 하단 + 플로팅 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">데모 소개</div><div class="page-num">07 / 09</div></div>
+  <div class="page-body">
+    <div class="demo-grid">
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-cases.png" alt="이용 사례"></div>
+        <div class="demo-shot-caption"><div class="name">이용 사례</div><div class="desc">영신디엔씨 외 도입 성과 (이미지 + 텍스트 + 핵심 수치)</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/main-floating.png" alt="플로팅 배너"></div>
+        <div class="demo-shot-caption"><div class="name">플로팅 배너 (우측 고정)</div><div class="desc">스크롤 시 우측 하단에 고정 노출 — 브로슈어 다운로드 + 견적 문의 퀵 버튼</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/service-values.png" alt="서비스 소개"></div>
+        <div class="demo-shot-caption"><div class="name">서비스 소개 페이지</div><div class="desc">SafeWorks 약속(현장·관리자·기업) + 4가지 기능 + 도입 프로세스 + 홍보영상 + 브로슈어</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/pricing-compare.png" alt="요금 안내 상세"></div>
+        <div class="demo-shot-caption"><div class="name">요금 안내 (상세)</div><div class="desc">월/연 토글 + 3개 플랜 + 비교 테이블 12행 + FAQ</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 8: 데모 소개 (3) — 서브 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">데모 소개</div><div class="page-num">08 / 09</div></div>
+  <div class="page-body">
+    <div class="demo-grid">
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/resources.png" alt="다운로드"></div>
+        <div class="demo-shot-caption"><div class="name">다운로드 (자료실)</div><div class="desc">사용자 매뉴얼 4 / 가이드라인 4 / 브로슈어 2 / 기술문서 2 + 카테고리 필터</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap"><img src="screenshots/support-faq.png" alt="고객지원"></div>
+        <div class="demo-shot-caption"><div class="name">고객지원</div><div class="desc">FAQ 아코디언 10문항 + 서비스 이용하기 / 견적 문의 (5필드 폼 + 관리자 메일 발송)</div></div>
+      </div>
+      <div class="demo-shot">
+        <div class="demo-shot-img-wrap" style="gap:16px; justify-content:space-evenly; align-items:flex-end;">
+          <img src="screenshots/responsive-tablet.png" alt="태블릿 뷰" style="width:auto; height:100%; max-width:60%; object-fit:contain;">
+          <img src="screenshots/responsive-mobile.png" alt="모바일 뷰" style="width:auto; height:100%; max-width:28%; object-fit:contain;">
+        </div>
+        <div class="demo-shot-caption"><div class="name">반응형 웹디자인</div><div class="desc">태블릿(768px) + 모바일(375px) 최적화 레이아웃</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page 10: 데모 접속 안내 -->
+<section class="page">
+  <div class="page-header"><div class="page-title">데모 접속 안내</div><div class="page-num">09 / 09</div></div>
+  <div class="page-body">
+    <div class="access-grid">
+      <div>
+        <div class="url-label">데모 URL</div>
+        <div class="url-box"><a href="https://firstpip.github.io/demos/kmong-225685-demo/">https://firstpip.github.io/demos/kmong-225685-demo/</a></div>
+        <div class="url-label">접속 방법</div>
+        <div class="access-steps">
+          <div class="access-step"><div class="access-step-num">1</div><div><div class="access-step-name">제공된 URL에 PC 또는 모바일 브라우저로 접속합니다.</div><div class="access-step-desc">Chrome, Safari, Edge, Firefox 등 최신 브라우저를 권장합니다.</div></div></div>
+          <div class="access-step"><div class="access-step-num">2</div><div><div class="access-step-name">메인 페이지를 위에서 아래로 살펴봅니다.</div><div class="access-step-desc">히어로 → 협력사+통계 → 제품 소개 롤링 → 요금 → 이용 사례 → 홍보영상 → 브로슈어 → 최종 CTA 순서로 이어집니다.</div></div></div>
+          <div class="access-step"><div class="access-step-num">3</div><div><div class="access-step-name">상단 메뉴에서 서브 페이지 4종을 모두 확인합니다.</div><div class="access-step-desc">서비스 소개 / 요금 안내 / 다운로드 / 고객지원 페이지가 모두 동작합니다.</div></div></div>
+          <div class="access-step"><div class="access-step-num">4</div><div><div class="access-step-name">주요 인터랙션을 직접 체험하세요.</div><div class="access-step-desc">요금 월/년 토글, 제품 소개 롤링 클릭, FAQ 아코디언, 도입문의 폼 제출(데모) 모두 실제 동작합니다.</div></div></div>
+        </div>
+      </div>
+      <div class="qr-area">
+        <div class="qr-grid"><img src="screenshots/qr-demo.png" alt="데모 URL QR 코드"></div>
+        <div class="qr-label">모바일에서 QR 스캔</div>
+      </div>
+    </div>
+
+    <div class="flow-section">
+      <div class="flow-title">체험 가능한 플로우</div>
+      <div class="flow-grid">
+        <div class="flow-item"><strong>방문자 흐름</strong> — 메인 둘러보기 → 요금 토글 → 이용 사례 → 영상 재생 → 브로슈어 다운로드 → 고객지원 폼 제출</div>
+        <div class="flow-item"><strong>관리자 흐름</strong> — 다운로드 페이지 카테고리 필터 → 매뉴얼/가이드 검색 → 자료 다운로드</div>
+        <div class="flow-item"><strong>의뢰 검수</strong> — 메뉴 5종, CTA 라벨, 폼 5필드, 참고 사이트 패턴(마키나락스/Dooray/무스마) 확인</div>
+        <div class="flow-item"><strong>반응형 검수</strong> — 데스크톱(1440) → 태블릿(768) → 모바일(375) 각각 깨짐 없음 확인</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

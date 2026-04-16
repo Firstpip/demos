@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SafeWorks 고객지원 — FAQ, 서비스 이용하기, 견적 문의를 한 곳에서.">
+<title>고객지원 — SafeWorks</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/subpages.css">
+</head>
+<body>
+<div id="layout-header"></div>
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">고객지원</span>
+    <h1>무엇을 도와드릴까요?</h1>
+    <p>자주 묻는 질문, 서비스 이용하기, 견적 문의를 한 페이지에서 처리하세요.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="support-tabs" id="support-tabs">
+      <button data-tab="faq" class="active">FAQ</button>
+      <button data-tab="use">서비스 이용하기</button>
+      <button data-tab="quote">견적 문의</button>
+    </div>
+
+    <!-- FAQ -->
+    <div class="support-panel active" data-panel="faq">
+      <div class="faq-list" id="support-faq">
+        <details class="faq-item"><summary>SafeWorks는 어떤 솔루션인가요?</summary><div class="faq-body">맞춤형 안전 대시보드, 안전 문서 디지털 작성, 실시간 위험 공유, 현장 맞춤형 안전점검표를 하나로 통합한 안전·문서 관리 솔루션입니다. 영신디엔씨가 현장에서 검증해 만들었습니다.</div></details>
+        <details class="faq-item"><summary>도입까지 얼마나 걸리나요?</summary><div class="faq-body">평균 2주 이내 (상담 1일 + 계정 설정·장비 배포 3~5일 + 현장 교육 1~2일)가 소요됩니다.</div></details>
+        <details class="faq-item"><summary>안전 문서 템플릿은 얼마나 제공되나요?</summary><div class="faq-body">기본 24종 (작업 허가서, 일일 점검 일지, 위험성 평가, TBM 일지, 안전 교육 일지 등)을 제공하며, 현장 특성에 맞게 항목을 추가·수정할 수 있습니다. Enterprise 플랜은 무제한 커스텀 템플릿을 지원합니다.</div></details>
+        <details class="faq-item"><summary>여러 현장을 한 계정으로 관리할 수 있나요?</summary><div class="faq-body">Pro 플랜은 최대 5개 현장, Enterprise 플랜은 무제한 현장을 단일 대시보드에서 관리할 수 있습니다.</div></details>
+        <details class="faq-item"><summary>중대재해처벌법 대응에 활용할 수 있나요?</summary><div class="faq-body">네, 모든 출입·안전 이벤트를 감사 로그로 저장하며, 법적 대응에 필요한 리포트를 자동 생성합니다. 관련 가이드라인은 다운로드 페이지에서 받아보실 수 있습니다.</div></details>
+        <details class="faq-item"><summary>기존 ERP/안전보건공단 시스템과 연동되나요?</summary><div class="faq-body">Enterprise 플랜에서 국내 주요 ERP(더존, SAP 등) 및 안전보건공단 API 연동을 지원합니다.</div></details>
+        <details class="faq-item"><summary>데이터 보안은 어떻게 보장되나요?</summary><div class="faq-body">전송·저장 구간 AES-256 암호화, ISO 27001·ISMS-P 준수, 역할 기반 권한 관리를 적용합니다.</div></details>
+        <details class="faq-item"><summary>현장에서 오프라인 상황은 어떻게 처리되나요?</summary><div class="faq-body">오프라인 캐싱을 지원해 네트워크 연결이 끊겨도 로컬에 데이터가 저장되고, 재연결 시 자동 동기화됩니다.</div></details>
+        <details class="faq-item"><summary>지원은 어떻게 받을 수 있나요?</summary><div class="faq-body">Starter: 이메일 지원 (영업일 24시간 내 응답), Pro: 전담 매니저 + 카카오톡 지원, Enterprise: 24/7 전화·온사이트 지원.</div></details>
+        <details class="faq-item"><summary>세금계산서 발행이 가능한가요?</summary><div class="faq-body">결제 시 사업자 정보를 등록하시면 월말에 자동으로 세금계산서가 발행됩니다. 부가세는 별도입니다.</div></details>
+      </div>
+    </div>
+
+    <!-- 서비스 이용하기 Form -->
+    <div class="support-panel" data-panel="use" id="use">
+      <div class="contact-grid">
+        <form class="contact-form" id="use-form" novalidate>
+          <h3 style="margin-bottom:8px;">서비스 이용하기</h3>
+          <p style="color: var(--color-text-soft); margin-bottom: 20px; font-size: 14px;">필수 항목을 입력하시면 영업일 1일 이내 담당자가 연락드립니다.</p>
+          <div class="form-row">
+            <label>소속<span class="required">*</span></label>
+            <input type="text" name="affiliation" placeholder="회사명 / 단체명" required>
+            <div class="error-msg">소속을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>이름<span class="required">*</span></label>
+            <input type="text" name="name" required>
+            <div class="error-msg">이름을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>연락처<span class="required">*</span></label>
+            <input type="text" inputmode="numeric" name="phone" placeholder="010-0000-0000" required>
+            <div class="error-msg">연락처를 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>이메일<span class="required">*</span></label>
+            <input type="email" name="email" required>
+            <div class="error-msg">올바른 이메일 형식을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>문의 내용<span class="required">*</span></label>
+            <textarea name="message" placeholder="현장 규모, 도입 일정, 특수 요구사항 등 편하게 남겨주세요." required></textarea>
+            <div class="error-msg">문의 내용을 입력해주세요.</div>
+          </div>
+          <label class="form-check">
+            <input type="checkbox" name="agree" required>
+            <span>개인정보 수집·이용에 동의합니다. (문의 처리 목적, 3개월 보관)</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">서비스 이용하기 신청</button>
+        </form>
+        <div class="contact-info">
+          <div class="contact-info-item"><h4>전화 상담</h4><p>평일 09:00 ~ 18:00<br/><a href="tel:02-0000-0000">02-0000-0000</a></p></div>
+          <div class="contact-info-item"><h4>이메일</h4><p><a href="mailto:hello@safeworks.example">hello@safeworks.example</a></p></div>
+          <div class="contact-info-item"><h4>방문 상담</h4><p>서울특별시 강남구 테헤란로 000, 00층<br/>방문 전 예약 부탁드립니다.</p></div>
+          <div class="contact-info-item" style="background: var(--color-primary-light); border: 1px solid var(--color-primary);">
+            <h4 style="color: var(--color-primary);">빠른 답변이 필요하신가요?</h4>
+            <p>카카오톡 채널에서 평일 09~18시 실시간 상담을 제공합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 견적 문의 Form -->
+    <div class="support-panel" data-panel="quote" id="quote">
+      <div class="contact-grid">
+        <form class="contact-form" id="quote-form" novalidate>
+          <h3 style="margin-bottom:8px;">견적 문의</h3>
+          <p style="color: var(--color-text-soft); margin-bottom: 20px; font-size: 14px;">현장 규모와 도입 일정에 맞춘 맞춤 견적을 보내드립니다.</p>
+          <div class="form-row">
+            <label>소속<span class="required">*</span></label>
+            <input type="text" name="affiliation" placeholder="회사명 / 단체명" required>
+            <div class="error-msg">소속을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>이름<span class="required">*</span></label>
+            <input type="text" name="name" required>
+            <div class="error-msg">이름을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>연락처<span class="required">*</span></label>
+            <input type="text" inputmode="numeric" name="phone" placeholder="010-0000-0000" required>
+            <div class="error-msg">연락처를 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>이메일<span class="required">*</span></label>
+            <input type="email" name="email" required>
+            <div class="error-msg">올바른 이메일 형식을 입력해주세요.</div>
+          </div>
+          <div class="form-row">
+            <label>문의 내용<span class="required">*</span></label>
+            <textarea name="message" placeholder="현장 규모, 작업자 수, 예상 도입 일정, 필요한 기능 등 적어주세요." required></textarea>
+            <div class="error-msg">문의 내용을 입력해주세요.</div>
+          </div>
+          <label class="form-check">
+            <input type="checkbox" name="agree" required>
+            <span>개인정보 수집·이용에 동의합니다. (문의 처리 목적, 3개월 보관)</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">견적 문의 보내기</button>
+        </form>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <h4>견적 응답 프로세스</h4>
+            <p style="line-height:1.8;">
+              1. 영업일 1일 이내 담당자 연락<br/>
+              2. 30분 화상/유선 상담<br/>
+              3. 맞춤 견적서 발송 (1~2일)<br/>
+              4. 계약·도입 일정 협의
+            </p>
+          </div>
+          <div class="contact-info-item" style="background: var(--color-primary-light); border: 1px solid var(--color-primary);">
+            <h4 style="color: var(--color-primary);">빠른 견적이 필요하신가요?</h4>
+            <p>전화로 즉시 상담 가능합니다. 평일 09~18시 / 02-0000-0000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="layout-footer"></div>
+<script src="../js/common.js"></script>
+<script>
+const tabs = document.querySelectorAll('#support-tabs button');
+const panels = document.querySelectorAll('.support-panel');
+function activateTab(key) {
+  tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === key));
+  panels.forEach(p => p.classList.toggle('active', p.dataset.panel === key));
+}
+tabs.forEach(btn => btn.addEventListener('click', () => {
+  activateTab(btn.dataset.tab);
+  history.replaceState(null, '', '#' + btn.dataset.tab);
+}));
+const hash = location.hash.slice(1);
+if (hash && document.querySelector(`[data-panel="${hash}"]`)) activateTab(hash);
+
+function validateForm(form) {
+  let valid = true;
+  form.querySelectorAll('[required]').forEach(field => {
+    const row = field.closest('.form-row') || field.closest('.form-check');
+    if (field.type === 'checkbox') {
+      if (!field.checked) { valid = false; field.style.outline = '2px solid #EF4444'; }
+      else field.style.outline = '';
+      return;
+    }
+    const empty = !field.value.trim();
+    const invalidEmail = field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+    if (empty || invalidEmail) { valid = false; if (row) row.classList.add('has-error'); }
+    else if (row) row.classList.remove('has-error');
+  });
+  return valid;
+}
+
+['use-form', 'quote-form'].forEach(id => {
+  const form = document.getElementById(id);
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!validateForm(form)) { window.toast('필수 항목을 확인해주세요.', 'error'); return; }
+    const msg = id === 'use-form'
+      ? '서비스 이용 신청이 접수되었습니다. 영업일 1일 이내 연락드립니다. (데모: 실제 배포 시 MySQL에 저장 + 관리자 이메일 발송)'
+      : '견적 문의가 접수되었습니다. 1~2일 내 맞춤 견적서를 보내드립니다. (데모)';
+    window.toast(msg, 'success');
+    form.reset();
+  });
+  form.querySelectorAll('input, textarea, select').forEach(field => {
+    field.addEventListener('input', () => {
+      const row = field.closest('.form-row');
+      if (row) row.classList.remove('has-error');
+    });
+  });
+});
+
+document.querySelectorAll('input[inputmode="numeric"]').forEach(input => {
+  input.addEventListener('input', e => {
+    e.target.value = e.target.value.replace(/[^0-9\-]/g, '');
+  });
+});
+</script>
+</body>
+</html>
