@@ -1,5 +1,8 @@
 {
   "title": "에너링거 - 건강기능식품 추천 플랫폼",
   "description": "DTC 유전자 및 건강검진 데이터 기반 맞춤형 건기식 추천 및 전문가 상담 플랫폼",
-  "pages": 17
+  "pages": 17,
+  "techStack": ["Next.js", "Tailwind CSS"],
+  "category": "ecommerce",
+  "color": "#0284c7"
 }

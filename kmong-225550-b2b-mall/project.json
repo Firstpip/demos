@@ -1,5 +1,8 @@
 {
   "title": "B2B 폐쇄몰 쇼핑몰",
   "description": "아임웹 기반 쇼핑몰을 자체구축 B2B 폐쇄몰로 전환",
-  "pages": 10
+  "pages": 10,
+  "techStack": ["Next.js", "React Quill"],
+  "category": "ecommerce",
+  "color": "#2563eb"
 }
