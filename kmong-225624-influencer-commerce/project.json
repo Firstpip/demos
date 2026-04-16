@@ -2,7 +2,12 @@
   "title": "인플루언서 역직구 커머스",
   "description": "인플루언서 연계 글로벌 역직구 커머스 플랫폼 및 정산 관리 시스템",
   "pages": 12,
-  "techStack": ["Next.js", "shadcn/ui", "Recharts"],
+  "techStack": [
+    "Next.js",
+    "shadcn/ui",
+    "Recharts"
+  ],
   "category": "ecommerce",
-  "color": "#8b5cf6"
+  "color": "#8b5cf6",
+  "thumbnail": "home.png"
 }
