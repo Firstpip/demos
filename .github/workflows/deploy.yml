@@ -23,10 +23,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Assemble deploy artifact
         run: |
-          mkdir -p _site
+          mkdir -p _site _site/thumbnails
           cp .nojekyll _site/
 
-          # dist/ → kmong-{id}-demo/ 매핑
+          # dist/ → kmong-{id}-demo/
           for dir in kmong-*/dist; do
             [ -d "$dir" ] || continue
             project_dir=$(dirname "$dir")
@@ -34,8 +34,30 @@ jobs:
             cp -r "$dir" "_site/kmong-${id}-demo"
           done
 
-          # project.json들로 index.html 자동 생성
+          # Copy thumbnails from screenshots/
+          for dir in kmong-*/screenshots; do
+            [ -d "$dir" ] || continue
+            project_dir=$(dirname "$dir")
+            id=$(echo "$project_dir" | sed 's/kmong-\([0-9]*\).*/\1/')
+            thumb=$(python3 -c "
+          import json, glob, os
+          pj = '${project_dir}/project.json'
+          t = ''
+          if os.path.exists(pj):
+              d = json.load(open(pj))
+              t = d.get('thumbnail', '')
+          if t and os.path.exists(f'${dir}/{t}'):
+              print(f'${dir}/{t}')
+          else:
+              pngs = sorted(glob.glob(f'${dir}/*.png'))
+              print(pngs[0] if pngs else '')
+          ")
+            [ -n "$thumb" ] && cp "$thumb" "_site/thumbnails/kmong-${id}.png"
+          done
+
+          # Generate index.html
           python3 .github/scripts/generate-index.py _site/index.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

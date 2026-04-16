@@ -1,5 +1,8 @@
 {
   "title": "스포츠리그 경기신청 플랫폼",
   "description": "스포츠 경기 일정 등록, 신청, 대진표 관리 하이브리드 앱 플랫폼",
-  "pages": 8
+  "pages": 8,
+  "techStack": ["Next.js", "Lucide"],
+  "category": "community",
+  "color": "#0d9488"
 }
