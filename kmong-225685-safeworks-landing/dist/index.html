@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SafeWorks — 안전은 대응이 아닌, 예방입니다. 복잡한 보건 관리와 혼란스러운 서류를 맞춤형 대시보드 하나로. 영신디엔씨가 현장에서 검증한 안전·문서 관리 솔루션.">
+<meta property="og:title" content="SafeWorks — 안전·문서 관리 솔루션 · 영신디엔씨">
+<meta property="og:description" content="안전은 대응이 아닌 예방입니다. 맞춤형 대시보드로 현장 문서와 안전보건 현황을 한눈에.">
+<meta property="og:type" content="website">
+<title>SafeWorks — 안전·문서 관리 솔루션 | 영신디엔씨</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div id="layout-header"></div>
+
+<main>
+
+<!-- 1. 히어로 (마키나락스 스타일: 대시보드 웹 UI + 서비스 이용하기/견적 문의 CTA + 배너 아래 고객사 로고) -->
+<section class="hero" id="section-hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">맞춤형 안전·문서 관리 솔루션 · 영신디엔씨</span>
+      <h1>안전은 대응이 아닌,<br/><span class="highlight">예방</span>입니다.</h1>
+      <p class="hero-lead">
+        복잡한 보건 관리와 혼란스러운 서류를 한 번에. SafeWorks는 현장 문서 작성과 안전보건 현황을 맞춤형 대시보드 하나로 통합한 디지털 올인원 솔루션입니다.
+      </p>
+      <div class="hero-cta">
+        <a href="/support/#use" class="btn btn-primary btn-lg" id="cta-hero-use">서비스 이용하기</a>
+        <a href="/support/#quote" class="btn btn-secondary btn-lg" id="cta-hero-quote">견적 문의</a>
+      </div>
+    </div>
+    <div class="hero-visual" id="hero-dashboard">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#0F172A; color:#fff; font-size:13px;">
+        <!-- 윈도우 헤더 -->
+        <div style="display:flex; align-items:center; gap:8px; padding:12px 18px; background:#1E293B; border-bottom:1px solid rgba(255,255,255,.08);">
+          <div style="width:10px;height:10px;border-radius:50%;background:#EF4444;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#F59E0B;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#10B981;"></div>
+          <span style="margin-left:10px; font-weight:600; color:rgba(255,255,255,.85); font-size:12px;">SafeWorks 안전·문서 통합 대시보드</span>
+        </div>
+
+        <!-- 본문: 좌 사이드바 + 우 메인 -->
+        <div style="flex:1; display:grid; grid-template-columns:120px 1fr; min-height:0;">
+          <!-- 좌 사이드바: 현장 목록 -->
+          <div style="background:#1A2232; padding:14px 10px; border-right:1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; gap:6px;">
+            <div style="font-size:9px; color:rgba(255,255,255,.4); font-weight:700; letter-spacing:.05em; padding:0 6px 6px; text-transform:uppercase;">내 현장 4</div>
+            <div style="display:flex; align-items:center; gap:6px; padding:8px; background:rgba(43,108,223,.18); border-left:2px solid #60A5FA; border-radius:0 6px 6px 0;"><span style="width:6px; height:6px; border-radius:50%; background:#10B981;"></span><span style="font-size:11px; font-weight:600; color:#fff;">A현장</span></div>
+            <div style="display:flex; align-items:center; gap:6px; padding:8px;"><span style="width:6px; height:6px; border-radius:50%; background:#F59E0B;"></span><span style="font-size:11px; color:rgba(255,255,255,.7);">B현장</span></div>
+            <div style="display:flex; align-items:center; gap:6px; padding:8px;"><span style="width:6px; height:6px; border-radius:50%; background:#10B981;"></span><span style="font-size:11px; color:rgba(255,255,255,.7);">C현장</span></div>
+            <div style="display:flex; align-items:center; gap:6px; padding:8px;"><span style="width:6px; height:6px; border-radius:50%; background:#EF4444;"></span><span style="font-size:11px; color:rgba(255,255,255,.7);">D현장</span></div>
+          </div>
+
+          <!-- 우 메인 -->
+          <div style="padding:14px; display:flex; flex-direction:column; gap:10px; min-height:0; overflow:hidden;">
+            <!-- 상단 KPI 3개 -->
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+              <div style="background:rgba(43,108,223,.12); border:1px solid rgba(43,108,223,.3); border-radius:8px; padding:10px;">
+                <div style="font-size:9px; color:#93C5FD; font-weight:700; margin-bottom:4px;">오늘 작성 문서</div>
+                <div style="display:flex; align-items:baseline; gap:4px;"><span style="font-size:22px; font-weight:800; color:#fff;">81</span><span style="font-size:10px; color:rgba(255,255,255,.5);">건</span></div>
+              </div>
+              <div style="background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.3); border-radius:8px; padding:10px;">
+                <div style="font-size:9px; color:#6EE7B7; font-weight:700; margin-bottom:4px;">점검 완료율</div>
+                <div style="display:flex; align-items:baseline; gap:4px;"><span style="font-size:22px; font-weight:800; color:#fff;">87</span><span style="font-size:10px; color:rgba(255,255,255,.5);">%</span></div>
+              </div>
+              <div style="background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.3); border-radius:8px; padding:10px;">
+                <div style="font-size:9px; color:#FCA5A5; font-weight:700; margin-bottom:4px;">위험 공유</div>
+                <div style="display:flex; align-items:baseline; gap:4px;"><span style="font-size:22px; font-weight:800; color:#fff;">3</span><span style="font-size:10px; color:rgba(255,255,255,.5);">건</span></div>
+              </div>
+            </div>
+
+            <!-- 중단: 안전 문서 + 점검표 -->
+            <div style="display:grid; grid-template-columns:1.4fr 1fr; gap:8px; min-height:0; flex:1;">
+              <div style="background:#1E293B; border-radius:8px; padding:10px; display:flex; flex-direction:column; min-height:0;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                  <span style="font-size:10px; color:rgba(255,255,255,.55); font-weight:700;">안전 문서 작성 현황</span>
+                  <span style="font-size:9px; color:#60A5FA; font-weight:600;">+ 새 문서</span>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:5px;">
+                  <div style="display:flex; align-items:center; gap:6px; padding:6px 8px; background:rgba(255,255,255,.03); border-radius:5px;"><div style="width:18px; height:18px; border-radius:4px; background:#2B6CDF; display:grid; place-items:center; font-size:8px; font-weight:700;">P</div><span style="font-size:10px; color:rgba(255,255,255,.85); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">작업 허가서 #2026-0412-A</span><span style="font-size:9px; color:#F59E0B; font-weight:600;">진행중</span></div>
+                  <div style="display:flex; align-items:center; gap:6px; padding:6px 8px; background:rgba(255,255,255,.03); border-radius:5px;"><div style="width:18px; height:18px; border-radius:4px; background:#10B981; display:grid; place-items:center; font-size:8px; font-weight:700;">P</div><span style="font-size:10px; color:rgba(255,255,255,.85); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">일일 안전 점검 일지</span><span style="font-size:9px; color:#10B981; font-weight:600;">완료</span></div>
+                  <div style="display:flex; align-items:center; gap:6px; padding:6px 8px; background:rgba(255,255,255,.03); border-radius:5px;"><div style="width:18px; height:18px; border-radius:4px; background:#10B981; display:grid; place-items:center; font-size:8px; font-weight:700;">P</div><span style="font-size:10px; color:rgba(255,255,255,.85); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">위험성 평가 보고서</span><span style="font-size:9px; color:#10B981; font-weight:600;">완료</span></div>
+                  <div style="display:flex; align-items:center; gap:6px; padding:6px 8px; background:rgba(255,255,255,.03); border-radius:5px;"><div style="width:18px; height:18px; border-radius:4px; background:#7C3AED; display:grid; place-items:center; font-size:8px; font-weight:700;">P</div><span style="font-size:10px; color:rgba(255,255,255,.85); flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">TBM 일지 (4월 12일)</span><span style="font-size:9px; color:#10B981; font-weight:600;">완료</span></div>
+                </div>
+              </div>
+
+              <div style="background:#1E293B; border-radius:8px; padding:10px; display:flex; flex-direction:column;">
+                <div style="font-size:10px; color:rgba(255,255,255,.55); font-weight:700; margin-bottom:8px;">A현장 점검표</div>
+                <div style="display:flex; align-items:baseline; gap:4px; margin-bottom:8px;"><span style="font-size:22px; font-weight:800; color:#fff;">12</span><span style="font-size:11px; color:rgba(255,255,255,.5);">/ 12</span></div>
+                <div style="display:flex; flex-direction:column; gap:3px;">
+                  <div style="display:flex; align-items:center; gap:6px;"><div style="width:11px; height:11px; border-radius:3px; background:#10B981; display:grid; place-items:center; font-size:7px; font-weight:700;">✓</div><span style="font-size:9px; color:rgba(255,255,255,.7);">안전모 착용</span></div>
+                  <div style="display:flex; align-items:center; gap:6px;"><div style="width:11px; height:11px; border-radius:3px; background:#10B981; display:grid; place-items:center; font-size:7px; font-weight:700;">✓</div><span style="font-size:9px; color:rgba(255,255,255,.7);">안전대 체결</span></div>
+                  <div style="display:flex; align-items:center; gap:6px;"><div style="width:11px; height:11px; border-radius:3px; background:#10B981; display:grid; place-items:center; font-size:7px; font-weight:700;">✓</div><span style="font-size:9px; color:rgba(255,255,255,.7);">전동공구 점검</span></div>
+                  <div style="display:flex; align-items:center; gap:6px;"><div style="width:11px; height:11px; border-radius:3px; background:#10B981; display:grid; place-items:center; font-size:7px; font-weight:700;">✓</div><span style="font-size:9px; color:rgba(255,255,255,.7);">고소 난간</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단: 위험 공유 알림 -->
+            <div style="background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.3); border-radius:8px; padding:10px;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <div style="width:24px; height:24px; border-radius:50%; background:#EF4444; display:grid; place-items:center; flex-shrink:0;"><span style="font-weight:800; color:#fff; font-size:12px;">!</span></div>
+                <div style="flex:1; min-width:0;">
+                  <div style="font-size:11px; font-weight:700; color:#FCA5A5;">D현장 3층 추락 위험 구역</div>
+                  <div style="font-size:9px; color:rgba(255,255,255,.6); margin-top:1px;">난간 미설치 · 작업자 24명 · 협력사 5곳에 즉시 공유됨</div>
+                </div>
+                <span style="font-size:9px; color:rgba(255,255,255,.4); flex-shrink:0;">방금</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 신뢰도 (마키나락스 등 주요 고객사 로고 슬라이더) -->
+<section class="partners" id="section-partners">
+  <div class="container">
+    <p class="partners-lead">현장에서 검증된 SafeWorks · 함께하는 기업들</p>
+    <div class="logo-track">
+      <div class="logo-track-inner">
+        <div class="logo-item featured">마키나락스</div>
+        <div class="logo-item featured">영신디엔씨</div>
+        <div class="logo-item">현대건설</div>
+        <div class="logo-item">DL이앤씨</div>
+        <div class="logo-item">삼성물산</div>
+        <div class="logo-item">포스코이앤씨</div>
+        <div class="logo-item">GS건설</div>
+        <div class="logo-item">HDC현대산업개발</div>
+        <div class="logo-item">롯데건설</div>
+        <div class="logo-item">한화건설</div>
+        <div class="logo-item">계룡건설</div>
+        <div class="logo-item featured">마키나락스</div>
+        <div class="logo-item featured">영신디엔씨</div>
+        <div class="logo-item">현대건설</div>
+        <div class="logo-item">DL이앤씨</div>
+        <div class="logo-item">삼성물산</div>
+        <div class="logo-item">포스코이앤씨</div>
+        <div class="logo-item">GS건설</div>
+        <div class="logo-item">HDC현대산업개발</div>
+        <div class="logo-item">롯데건설</div>
+        <div class="logo-item">한화건설</div>
+        <div class="logo-item">계룡건설</div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">30<span style="font-size:.6em; color:var(--color-accent-dark);">+</span></div>
+        <div class="stat-label">도입 현장 수</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12,000<span style="font-size:.6em; color:var(--color-accent-dark);">+</span></div>
+        <div class="stat-label">디지털 안전 문서 처리</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">-68<span style="font-size:.6em; color:var(--color-accent-dark);">%</span></div>
+        <div class="stat-label">서류 작성 시간 단축</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 제품 소개 (Dooray 스타일 페이지 롤링: 좌 이미지 / 우 설명) -->
+<section class="features-rolling" id="section-features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">핵심 기능</span>
+      <h2>복잡한 안전·문서 업무, 한 화면에서</h2>
+      <p>스크롤하거나 항목을 클릭하면 좌측 화면이 함께 전환됩니다.</p>
+    </div>
+    <div class="features-rolling-inner">
+      <!-- 좌측: UI 이미지 (sticky) -->
+      <div class="features-visual" id="features-visual">
+        <!-- 1. 맞춤형 안전 대시보드 -->
+        <div class="feature-slide active" data-feature="0">
+          <svg viewBox="0 0 460 360" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="360" rx="14" fill="#0F172A"/>
+            <rect x="0" y="0" width="460" height="40" rx="14" fill="#1E293B"/>
+            <circle cx="20" cy="20" r="5" fill="#EF4444"/><circle cx="36" cy="20" r="5" fill="#F59E0B"/><circle cx="52" cy="20" r="5" fill="#10B981"/>
+            <text x="80" y="25" fill="rgba(255,255,255,.7)" font-size="11" font-weight="600">SafeWorks · 맞춤형 안전 대시보드</text>
+            <text x="20" y="68" fill="rgba(255,255,255,.55)" font-size="11" font-weight="600">현장별 안전보건 현황 한눈에 비교</text>
+            <rect x="20" y="84" width="200" height="100" rx="10" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.25)"/>
+            <text x="32" y="106" fill="#fff" font-size="13" font-weight="700">A현장</text>
+            <text x="180" y="106" fill="#10B981" font-size="10" font-weight="600">● 정상</text>
+            <text x="32" y="128" fill="rgba(255,255,255,.55)" font-size="10">점검표 12/12</text>
+            <text x="32" y="144" fill="rgba(255,255,255,.55)" font-size="10">서류 24건 작성</text>
+            <rect x="32" y="158" width="170" height="6" rx="3" fill="rgba(255,255,255,.06)"/><rect x="32" y="158" width="170" height="6" rx="3" fill="#10B981"/>
+            <rect x="240" y="84" width="200" height="100" rx="10" fill="rgba(245,158,11,.08)" stroke="rgba(245,158,11,.25)"/>
+            <text x="252" y="106" fill="#fff" font-size="13" font-weight="700">B현장</text>
+            <text x="396" y="106" fill="#F59E0B" font-size="10" font-weight="600">● 점검 필요</text>
+            <text x="252" y="128" fill="rgba(255,255,255,.55)" font-size="10">점검표 8/12</text>
+            <text x="252" y="144" fill="rgba(255,255,255,.55)" font-size="10">서류 17건 작성</text>
+            <rect x="252" y="158" width="170" height="6" rx="3" fill="rgba(255,255,255,.06)"/><rect x="252" y="158" width="113" height="6" rx="3" fill="#F59E0B"/>
+            <rect x="20" y="196" width="200" height="100" rx="10" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.25)"/>
+            <text x="32" y="218" fill="#fff" font-size="13" font-weight="700">C현장</text>
+            <text x="180" y="218" fill="#10B981" font-size="10" font-weight="600">● 정상</text>
+            <text x="32" y="240" fill="rgba(255,255,255,.55)" font-size="10">점검표 15/15</text>
+            <text x="32" y="256" fill="rgba(255,255,255,.55)" font-size="10">서류 31건 작성</text>
+            <rect x="32" y="270" width="170" height="6" rx="3" fill="rgba(255,255,255,.06)"/><rect x="32" y="270" width="170" height="6" rx="3" fill="#10B981"/>
+            <rect x="240" y="196" width="200" height="100" rx="10" fill="rgba(239,68,68,.08)" stroke="rgba(239,68,68,.25)"/>
+            <text x="252" y="218" fill="#fff" font-size="13" font-weight="700">D현장</text>
+            <text x="378" y="218" fill="#EF4444" font-size="10" font-weight="600">● 위험 1건</text>
+            <text x="252" y="240" fill="rgba(255,255,255,.55)" font-size="10">점검표 5/10</text>
+            <text x="252" y="256" fill="rgba(255,255,255,.55)" font-size="10">서류 9건 작성</text>
+            <rect x="252" y="270" width="170" height="6" rx="3" fill="rgba(255,255,255,.06)"/><rect x="252" y="270" width="85" height="6" rx="3" fill="#EF4444"/>
+          </svg>
+        </div>
+        <!-- 2. 안전 문서 디지털 작성·관리 -->
+        <div class="feature-slide" data-feature="1">
+          <svg viewBox="0 0 460 360" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="360" rx="14" fill="#0F172A"/>
+            <rect x="0" y="0" width="460" height="40" rx="14" fill="#1E293B"/>
+            <circle cx="20" cy="20" r="5" fill="#EF4444"/><circle cx="36" cy="20" r="5" fill="#F59E0B"/><circle cx="52" cy="20" r="5" fill="#10B981"/>
+            <text x="80" y="25" fill="rgba(255,255,255,.7)" font-size="11" font-weight="600">SafeWorks · 안전 문서 디지털 작성</text>
+            <rect x="20" y="60" width="420" height="60" rx="10" fill="#1E293B"/>
+            <rect x="32" y="74" width="32" height="32" rx="6" fill="#2B6CDF"/>
+            <text x="48" y="95" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">PDF</text>
+            <text x="76" y="86" fill="#fff" font-size="13" font-weight="600">작업 허가서 #2026-0412-A</text>
+            <text x="76" y="105" fill="rgba(255,255,255,.55)" font-size="10">A현장 · 박OO 관리자 · 작성중</text>
+            <text x="395" y="98" fill="#F59E0B" font-size="10" font-weight="600">진행중</text>
+            <rect x="20" y="128" width="420" height="60" rx="10" fill="#1E293B"/>
+            <rect x="32" y="142" width="32" height="32" rx="6" fill="#10B981"/>
+            <text x="48" y="163" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">PDF</text>
+            <text x="76" y="154" fill="#fff" font-size="13" font-weight="600">일일 안전 점검 일지</text>
+            <text x="76" y="173" fill="rgba(255,255,255,.55)" font-size="10">B현장 · 김OO 관리자 · 12분 전 제출</text>
+            <text x="395" y="166" fill="#10B981" font-size="10" font-weight="600">완료</text>
+            <rect x="20" y="196" width="420" height="60" rx="10" fill="#1E293B"/>
+            <rect x="32" y="210" width="32" height="32" rx="6" fill="#10B981"/>
+            <text x="48" y="231" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">PDF</text>
+            <text x="76" y="222" fill="#fff" font-size="13" font-weight="600">위험성 평가 보고서</text>
+            <text x="76" y="241" fill="rgba(255,255,255,.55)" font-size="10">C현장 · 이OO 관리자 · 1시간 전</text>
+            <text x="395" y="234" fill="#10B981" font-size="10" font-weight="600">완료</text>
+            <rect x="20" y="278" width="420" height="56" rx="10" fill="rgba(43,108,223,.1)" stroke="rgba(43,108,223,.3)"/>
+            <text x="32" y="302" fill="#60A5FA" font-size="12" font-weight="700">+ 새 안전 문서 작성</text>
+            <text x="32" y="320" fill="rgba(255,255,255,.55)" font-size="10">템플릿 24종 · 모바일·PC 모두 지원</text>
+          </svg>
+        </div>
+        <!-- 3. 실시간 위험 요인 공유 -->
+        <div class="feature-slide" data-feature="2">
+          <svg viewBox="0 0 460 360" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="360" rx="14" fill="#0F172A"/>
+            <rect x="0" y="0" width="460" height="40" rx="14" fill="#1E293B"/>
+            <circle cx="20" cy="20" r="5" fill="#EF4444"/><circle cx="36" cy="20" r="5" fill="#F59E0B"/><circle cx="52" cy="20" r="5" fill="#10B981"/>
+            <text x="80" y="25" fill="rgba(255,255,255,.7)" font-size="11" font-weight="600">SafeWorks · 실시간 위험 공유</text>
+            <rect x="20" y="60" width="420" height="84" rx="10" fill="rgba(239,68,68,.12)" stroke="#EF4444" stroke-width="1"/>
+            <circle cx="42" cy="86" r="14" fill="#EF4444"/>
+            <text x="42" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">!</text>
+            <text x="68" y="84" fill="#EF4444" font-size="13" font-weight="700">D현장 3층 추락 위험 구역</text>
+            <text x="68" y="102" fill="rgba(255,255,255,.85)" font-size="11">난간 미설치 구간 발견 · 작업 중지 권고</text>
+            <text x="68" y="122" fill="rgba(255,255,255,.5)" font-size="10">현장 작업자 24명 · 협력사 5곳에 즉시 알림</text>
+            <text x="404" y="84" fill="rgba(255,255,255,.5)" font-size="10">방금</text>
+            <rect x="20" y="156" width="420" height="60" rx="10" fill="rgba(245,158,11,.1)" stroke="#F59E0B"/>
+            <text x="34" y="180" fill="#F59E0B" font-size="12" font-weight="700">⚠ B현장 절단기 점검 요청</text>
+            <text x="34" y="198" fill="rgba(255,255,255,.7)" font-size="10">소음 이상 · 안전 점검 필요 · 12분 전</text>
+            <text x="404" y="190" fill="rgba(255,255,255,.5)" font-size="10">3명 확인</text>
+            <rect x="20" y="228" width="420" height="60" rx="10" fill="rgba(16,185,129,.08)" stroke="#10B981"/>
+            <text x="34" y="252" fill="#10B981" font-size="12" font-weight="700">✓ A현장 사다리 교체 완료</text>
+            <text x="34" y="270" fill="rgba(255,255,255,.7)" font-size="10">위험 요인 해소 완료 · 1시간 전</text>
+            <text x="404" y="262" fill="rgba(255,255,255,.5)" font-size="10">완료</text>
+            <text x="20" y="316" fill="rgba(255,255,255,.5)" font-size="10" font-weight="600">현장 ↔ 본사 ↔ 협력사 동시 공유 · 조치 이력 자동 추적</text>
+          </svg>
+        </div>
+        <!-- 4. 현장 맞춤형 안전점검표 -->
+        <div class="feature-slide" data-feature="3">
+          <svg viewBox="0 0 460 360" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="360" rx="14" fill="#0F172A"/>
+            <rect x="0" y="0" width="460" height="40" rx="14" fill="#1E293B"/>
+            <circle cx="20" cy="20" r="5" fill="#EF4444"/><circle cx="36" cy="20" r="5" fill="#F59E0B"/><circle cx="52" cy="20" r="5" fill="#10B981"/>
+            <text x="80" y="25" fill="rgba(255,255,255,.7)" font-size="11" font-weight="600">SafeWorks · 현장 맞춤 안전점검표</text>
+            <rect x="20" y="60" width="420" height="32" rx="8" fill="#1E293B"/>
+            <text x="34" y="80" fill="#fff" font-size="12" font-weight="600">A현장 · 4월 12일 일일 안전점검</text>
+            <text x="404" y="80" fill="#10B981" font-size="11" font-weight="600">12/12</text>
+            <rect x="20" y="100" width="420" height="34" rx="6" fill="#1E293B"/>
+            <rect x="34" y="112" width="14" height="14" rx="3" fill="#10B981"/>
+            <text x="40" y="123" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">✓</text>
+            <text x="58" y="123" fill="rgba(255,255,255,.85)" font-size="11">안전모 착용 상태 확인</text>
+            <rect x="20" y="140" width="420" height="34" rx="6" fill="#1E293B"/>
+            <rect x="34" y="152" width="14" height="14" rx="3" fill="#10B981"/>
+            <text x="40" y="163" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">✓</text>
+            <text x="58" y="163" fill="rgba(255,255,255,.85)" font-size="11">안전대(추락방지) 체결 확인</text>
+            <rect x="20" y="180" width="420" height="34" rx="6" fill="#1E293B"/>
+            <rect x="34" y="192" width="14" height="14" rx="3" fill="#10B981"/>
+            <text x="40" y="203" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">✓</text>
+            <text x="58" y="203" fill="rgba(255,255,255,.85)" font-size="11">전동공구 절연 상태 점검</text>
+            <rect x="20" y="220" width="420" height="34" rx="6" fill="#1E293B"/>
+            <rect x="34" y="232" width="14" height="14" rx="3" fill="rgba(245,158,11,.4)"/>
+            <text x="58" y="243" fill="rgba(255,255,255,.85)" font-size="11">고소작업대 난간 점검</text>
+            <text x="404" y="243" fill="#F59E0B" font-size="10" font-weight="600">진행중</text>
+            <rect x="20" y="270" width="420" height="56" rx="10" fill="rgba(43,108,223,.1)" stroke="rgba(43,108,223,.3)"/>
+            <text x="34" y="294" fill="#60A5FA" font-size="12" font-weight="700">+ 공종별 점검표 템플릿 (철근, 콘크리트, 골조, 마감 등)</text>
+            <text x="34" y="312" fill="rgba(255,255,255,.55)" font-size="10">현장에 맞게 항목 추가·수정 후 협력사에 즉시 배포</text>
+          </svg>
+        </div>
+      </div>
+      <!-- 우측: 설명 텍스트 (스크롤 따라 이동) -->
+      <div class="features-list">
+        <div class="feature-item active" data-feature="0">
+          <h3>맞춤형 안전 대시보드</h3>
+          <p>여러 현장의 문서 작성 현황과 안전보건 현황을 한 화면에서 동시에 비교하세요. 본사·현장 어디서든 똑같은 정보를 실시간으로 확인할 수 있습니다.</p>
+        </div>
+        <div class="feature-item" data-feature="1">
+          <h3>안전 문서 디지털 작성·관리</h3>
+          <p>작업 허가서, 일일 점검 일지, 위험성 평가 보고서까지 24종 템플릿으로 모바일·PC에서 바로 작성. 종이 서류와 결재 지연이 사라집니다.</p>
+        </div>
+        <div class="feature-item" data-feature="2">
+          <h3>실시간 위험 요인 공유</h3>
+          <p>현장에서 발견된 위험 요인을 본사·협력사·작업자에게 동시에 공유하고, 조치 이력까지 자동으로 추적합니다. 사고를 예방하는 가장 빠른 방법입니다.</p>
+        </div>
+        <div class="feature-item" data-feature="3">
+          <h3>현장 맞춤형 안전점검표</h3>
+          <p>공종·현장 특성에 맞춘 안전점검표를 손쉽게 만들고 협력사에 배포하세요. 점검 결과는 자동으로 집계되어 대시보드와 리포트로 연결됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 요금 안내 (무스마 스타일: 우측 사이드바에 반복 CTA + 브로슈어 다운로드) -->
+<section class="pricing" id="section-pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">요금 안내</span>
+      <h2>현장 규모에 맞게,<br/>합리적으로 시작하세요</h2>
+      <p>월간/연간 플랜 비교. 언제든 해지할 수 있습니다.</p>
+    </div>
+    <div class="pricing-with-sidebar">
+      <div>
+        <div class="pricing-toggle-wrap">
+          <div class="pricing-toggle" role="tablist">
+            <button type="button" data-billing="monthly" class="active">월간 결제</button>
+            <button type="button" data-billing="yearly">연간 결제 <span class="pricing-badge-save">-20%</span></button>
+          </div>
+        </div>
+        <div class="pricing-grid" id="pricing-grid">
+          <div class="plan-card" data-plan="starter">
+            <div class="plan-name">Starter</div>
+            <div class="plan-tagline">소규모 현장 1곳을 위한 기본 패키지</div>
+            <div class="plan-price" data-monthly="1,900" data-yearly="1,520">1,900<span class="plan-price-suffix">원/월/인</span></div>
+            <div class="plan-price-hint">부가세 별도 · 최소 10인부터</div>
+            <ul class="plan-features">
+              <li>현장 1개, 작업자 50명까지</li>
+              <li>QR 출입 관리</li>
+              <li>기본 안전 알림</li>
+              <li>월간 리포트</li>
+              <li>이메일 지원</li>
+            </ul>
+            <a href="/support/#use" class="btn btn-secondary" style="width:100%;">서비스 이용하기</a>
+          </div>
+          <div class="plan-card featured" data-plan="pro">
+            <div class="plan-badge">가장 많이 선택</div>
+            <div class="plan-name">Pro</div>
+            <div class="plan-tagline">중대형 현장을 위한 추천 플랜</div>
+            <div class="plan-price" data-monthly="2,400" data-yearly="1,920">2,400<span class="plan-price-suffix">원/월/인</span></div>
+            <div class="plan-price-hint">부가세 별도 · 최소 30인부터</div>
+            <ul class="plan-features">
+              <li>현장 5개, 작업자 300명까지</li>
+              <li>QR + 얼굴 인식 출입</li>
+              <li>웨어러블 연동 모니터링</li>
+              <li>실시간 푸시 알림</li>
+              <li>안전 데이터 분석 대시보드</li>
+              <li>전담 매니저 배정</li>
+            </ul>
+            <a href="/support/#use" class="btn btn-primary" style="width:100%;">서비스 이용하기</a>
+          </div>
+          <div class="plan-card" data-plan="enterprise">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-tagline">대규모 현장·그룹사 맞춤 패키지</div>
+            <div class="plan-price">문의</div>
+            <div class="plan-price-hint">SLA · 전용 인프라 · ERP 연동</div>
+            <ul class="plan-features">
+              <li>무제한 현장 · 무제한 작업자</li>
+              <li>전용 인프라 (On-premise 가능)</li>
+              <li>ERP · 안전보건공단 연동</li>
+              <li>맞춤 보안 정책</li>
+              <li>24/7 전담 지원</li>
+              <li>온사이트 교육 제공</li>
+            </ul>
+            <a href="/support/#quote" class="btn btn-secondary" style="width:100%;">견적 문의</a>
+          </div>
+        </div>
+      </div>
+      <!-- 우측 sticky 사이드바 (의뢰인 명시: 서비스 이용하기, 견적 문의 반복 + 브로슈어 다운로드 버튼) -->
+      <aside class="pricing-sidebar" id="pricing-sidebar">
+        <h4>안전·문서 디지털화, 지금</h4>
+        <p>현장 규모와 도입 일정에 맞춘 견적을 부담 없이 받아보세요.</p>
+        <a href="/support/#use" class="btn btn-primary" id="sidebar-cta-use">서비스 이용하기</a>
+        <a href="/support/#quote" class="btn btn-secondary" id="sidebar-cta-quote">견적 문의</a>
+        <div class="divider"></div>
+        <div class="brochure-quick" id="sidebar-brochure" onclick="window.toast('SafeWorks_소개서.pdf 다운로드 (데모)', 'success')">
+          <div class="doc-icon">PDF</div>
+          <div class="doc-text">
+            <strong>브로슈어 다운로드</strong>
+            <small>4.2MB · 16페이지</small>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 이용 사례 (의뢰인 명시: OO사 등 실제 도입 사례 - 이미지+텍스트) -->
+<section class="cases" id="section-cases">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">이용 사례</span>
+      <h2>현장은 안전하게,<br/>관리자는 편리하게</h2>
+      <p>SafeWorks를 도입한 현장이 실제로 달성한 변화를 확인하세요.</p>
+    </div>
+    <div class="cases-grid">
+      <article class="case-card">
+        <div class="case-img">영신디엔씨<span class="case-tag">건설</span></div>
+        <div class="case-body">
+          <h3>영신디엔씨 — 6개월 도입 결과</h3>
+          <p>3개 현장의 안전 서류를 SafeWorks로 통합. 종이 결재가 사라지고 본사가 실시간으로 점검 현황을 확인합니다.</p>
+          <div class="case-stats">
+            <div class="case-stat"><div class="num">-72%</div><div class="label">서류 시간</div></div>
+            <div class="case-stat"><div class="num">100%</div><div class="label">디지털 전환</div></div>
+            <div class="case-stat"><div class="num">3</div><div class="label">현장 운영</div></div>
+          </div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-img">대형 건설사 A<span class="case-tag">건설</span></div>
+        <div class="case-body">
+          <h3>23개 현장 안전보건 통합</h3>
+          <p>Enterprise 플랜으로 본사가 23개 현장의 점검표·안전 문서를 단일 대시보드에서 비교 모니터링합니다.</p>
+          <div class="case-stats">
+            <div class="case-stat"><div class="num">23</div><div class="label">통합 현장</div></div>
+            <div class="case-stat"><div class="num">8,200</div><div class="label">월 처리 문서</div></div>
+            <div class="case-stat"><div class="num">-35%</div><div class="label">사고율</div></div>
+          </div>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-img">중견 건설사 B<span class="case-tag">건설</span></div>
+        <div class="case-body">
+          <h3>중대재해법 대응 체계 구축</h3>
+          <p>위험성 평가·점검표·조치 이력을 SafeWorks로 자동 기록해 법적 대응 자료를 즉시 출력할 수 있게 되었습니다.</p>
+          <div class="case-stats">
+            <div class="case-stat"><div class="num">5</div><div class="label">현장</div></div>
+            <div class="case-stat"><div class="num">100%</div><div class="label">감사 추적</div></div>
+            <div class="case-stat"><div class="num">3개월</div><div class="label">도입 기간</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 홍보동영상 -->
+<section class="video-section" id="section-video">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">SafeWorks 소개</span>
+      <h2>현장에서 검증된 솔루션, 영상으로</h2>
+      <p>맞춤형 대시보드, 안전 문서 디지털화, 위험 공유까지 — 어떻게 작동하는지 직접 확인하세요.</p>
+    </div>
+    <div class="video-wrap" id="btn-video-play" role="button" tabindex="0" aria-label="홍보영상 재생">
+      <div class="video-thumb">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+    <p class="video-caption">재생 버튼을 누르면 YouTube에서 영상이 재생됩니다.</p>
+  </div>
+</section>
+
+<!-- 7. 브로슈어 다운로드 -->
+<section class="brochure" id="section-brochure">
+  <div class="brochure-inner">
+    <div class="brochure-visual"></div>
+    <div class="brochure-content">
+      <span class="eyebrow">자료</span>
+      <h2>SafeWorks 소개서 다운로드</h2>
+      <p>맞춤형 대시보드, 안전 문서 디지털화, 점검표 운영 방법까지 한 권에 정리했습니다.</p>
+      <div class="brochure-meta">
+        <span>PDF · 4.2MB</span>
+        <span>최신 업데이트 2026.04</span>
+        <span>1,240건 다운로드</span>
+      </div>
+      <button class="btn btn-primary btn-lg" id="btn-brochure-download" onclick="window.toast('브로슈어가 다운로드됩니다. (데모)', 'success');">
+        브로슈어 다운로드
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 최종 CTA -->
+<section class="cta-final" id="section-cta-final">
+  <div class="container">
+    <h2>현장은 안전하게,<br/>관리자는 편리하게,<br/>기업은 탄탄하게.</h2>
+    <p>30분 상담으로 SafeWorks가 귀사 현장에 어떻게 적용되는지 알려드립니다.</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a href="/support/#use" class="btn btn-primary btn-lg" id="cta-final-use">서비스 이용하기</a>
+      <a href="/support/#quote" class="btn btn-secondary btn-lg" id="cta-final-quote">견적 문의</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Floating Banner (의뢰인 명시: 우측 고정 브로슈어 다운로드 퀵 버튼) -->
+<div class="floating-banner" id="floating-banner">
+  <button class="floating-close" onclick="window.closeFloating()" aria-label="닫기">✕</button>
+  <h4>SafeWorks 소개서</h4>
+  <p>핵심 기능과 도입 사례를 정리한 PDF를 바로 받아보세요.</p>
+  <div class="floating-actions">
+    <button class="btn btn-primary btn-sm" id="btn-floating-brochure" onclick="window.toast('브로슈어가 다운로드됩니다. (데모)', 'success');">브로슈어 다운로드</button>
+    <a href="/support/#quote" class="btn btn-secondary btn-sm" id="btn-floating-quote">견적 문의</a>
+  </div>
+</div>
+
+<div id="layout-footer"></div>
+
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

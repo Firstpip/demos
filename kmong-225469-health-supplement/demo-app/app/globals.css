@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #1B2A4A;
+  --color-navy-light: #2A3F6A;
+  --color-accent: #22C55E;
+  --color-accent-hover: #16A34A;
+  --color-risk: #EF4444;
+  --color-caution: #F59E0B;
+  --color-safe: #22C55E;
+  --color-info: #3B82F6;
+  --color-bg: #F8FAFC;
+  --color-text: #1E293B;
+  --color-text-sub: #64748B;
+  --color-border: #E2E8F0;
+}
+
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  color: #1E293B;
+  background: #ffffff;
+}

@@ -1,0 +1,3 @@
+# NOTE: This project is deployed to Firstpip/demos monorepo.
+# Local build for preview only:
+# GITHUB_PAGES=true npm run build  (produces /out)
