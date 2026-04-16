@@ -55,6 +55,10 @@ jobs:
             [ -n "$thumb" ] && cp "$thumb" "_site/thumbnails/kmong-${id}.png"
           done
 
+          # Copy root favicon for index page
+          [ -f favicon.ico ] && cp favicon.ico _site/
+          [ -f favicon.svg ] && cp favicon.svg _site/
+
           # Generate index.html
           python3 .github/scripts/generate-index.py _site/index.html
 

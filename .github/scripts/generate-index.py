@@ -102,6 +102,8 @@ def build_html(projects):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firstpip Demos</title>
   <meta name="description" content="Firstpip - \ud504\ub85c\uc81d\ud2b8 \ub370\ubaa8 \ud3ec\ud2b8\ud3f4\ub9ac\uc624">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
   <style>
