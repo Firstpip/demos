@@ -1,0 +1,8 @@
+{
+  "title": "모의고사 서적 판매 쇼핑몰",
+  "description": "출판사 모의고사 교재를 직접 판매하는 B2C 쇼핑몰. 상품/장바구니/주문/결제/자료실/후기/관리자",
+  "pages": 26,
+  "techStack": ["Next.js 15", "TypeScript", "Tailwind CSS", "Prisma", "MySQL", "토스페이먼츠", "Cloudflare R2"],
+  "category": "ecommerce",
+  "color": "#1B2A4A"
+}
