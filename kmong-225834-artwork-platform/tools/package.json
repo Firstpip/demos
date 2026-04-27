@@ -1,0 +1,11 @@
+{
+  "name": "kmong-225834-tools",
+  "version": "0.0.1",
+  "private": true,
+  "description": "검증·PDF 생성용 도구. demo-app 외부.",
+  "type": "module",
+  "dependencies": {
+    "@axe-core/puppeteer": "^4.11.2",
+    "puppeteer": "^24.42.0"
+  }
+}

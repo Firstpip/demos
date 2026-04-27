@@ -1,0 +1,227 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "startedAt": "2026-04-26T13:30:11.410Z",
+  "routes": [
+    {
+      "name": "home",
+      "path": "/",
+      "status": 200,
+      "ok": true,
+      "ms": 2629
+    },
+    {
+      "name": "login",
+      "path": "/login",
+      "status": 200,
+      "ok": true,
+      "ms": 802
+    },
+    {
+      "name": "signup",
+      "path": "/signup",
+      "status": 200,
+      "ok": true,
+      "ms": 997
+    },
+    {
+      "name": "jobs-list",
+      "path": "/jobs",
+      "status": 200,
+      "ok": true,
+      "ms": 1005
+    },
+    {
+      "name": "jobs-detail",
+      "path": "/jobs/job-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1010
+    },
+    {
+      "name": "jobs-new",
+      "path": "/jobs/new",
+      "status": 200,
+      "ok": true,
+      "ms": 986
+    },
+    {
+      "name": "projects-list",
+      "path": "/projects",
+      "status": 200,
+      "ok": true,
+      "ms": 777
+    },
+    {
+      "name": "projects-detail",
+      "path": "/projects/proj-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1117
+    },
+    {
+      "name": "projects-new",
+      "path": "/projects/new",
+      "status": 200,
+      "ok": true,
+      "ms": 952
+    },
+    {
+      "name": "artists-list",
+      "path": "/artists",
+      "status": 200,
+      "ok": true,
+      "ms": 1308
+    },
+    {
+      "name": "artists-detail",
+      "path": "/artists/u-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1084
+    },
+    {
+      "name": "mypage",
+      "path": "/mypage",
+      "status": 200,
+      "ok": true,
+      "ms": 741
+    },
+    {
+      "name": "profile-edit",
+      "path": "/profile/edit",
+      "status": 200,
+      "ok": true,
+      "ms": 974
+    },
+    {
+      "name": "admin-dashboard",
+      "path": "/admin",
+      "status": 200,
+      "ok": true,
+      "ms": 742
+    },
+    {
+      "name": "admin-approvals",
+      "path": "/admin/approvals",
+      "status": 200,
+      "ok": true,
+      "ms": 986
+    },
+    {
+      "name": "admin-jobs",
+      "path": "/admin/jobs",
+      "status": 200,
+      "ok": true,
+      "ms": 966
+    },
+    {
+      "name": "admin-members",
+      "path": "/admin/members",
+      "status": 200,
+      "ok": true,
+      "ms": 1000
+    },
+    {
+      "name": "admin-projects",
+      "path": "/admin/projects",
+      "status": 200,
+      "ok": true,
+      "ms": 988
+    },
+    {
+      "name": "admin-reports",
+      "path": "/admin/reports",
+      "status": 200,
+      "ok": true,
+      "ms": 996
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-01",
+      "name": "댄서 → 힙합 공고 필터 → 지원",
+      "ok": true,
+      "ms": 1371,
+      "error": null
+    },
+    {
+      "id": "S-02",
+      "name": "기업 → 공고 등록 폼 진입",
+      "ok": true,
+      "ms": 816,
+      "error": null
+    },
+    {
+      "id": "S-03",
+      "name": "관리자 → 승인 큐 진입",
+      "ok": true,
+      "ms": 831,
+      "error": null
+    },
+    {
+      "id": "S-04",
+      "name": "프로젝트 모집글 작성 폼 진입",
+      "ok": true,
+      "ms": 832,
+      "error": null
+    }
+  ],
+  "states": [
+    {
+      "name": "skeleton",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "skeleton",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "skeleton",
+      "viewport": "mobile",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "mobile",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "mobile",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-04-26T13:30:52.887Z",
+  "summary": {
+    "routesTotal": 19,
+    "routesOk": 19,
+    "scenariosTotal": 4,
+    "scenariosOk": 4,
+    "statesTotal": 9,
+    "statesOk": 9,
+    "errorsTotal": 0
+  }
+}
