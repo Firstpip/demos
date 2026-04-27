@@ -1,0 +1,98 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "runAt": "2026-04-27T05:29:16.002Z",
+  "totalViolations": 7,
+  "pages": [
+    {
+      "page": "home",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 9,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "jobs-list",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 26,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "jobs-detail",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 5,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "projects-list",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 36,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "artists-list",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 24,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "admin-dashboard",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 5,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    },
+    {
+      "page": "login",
+      "violations": 1,
+      "details": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 5,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        }
+      ]
+    }
+  ]
+}

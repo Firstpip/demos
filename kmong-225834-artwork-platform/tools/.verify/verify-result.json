@@ -1,0 +1,241 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "startedAt": "2026-04-27T05:26:50.258Z",
+  "routes": [
+    {
+      "name": "home",
+      "path": "/",
+      "status": 200,
+      "ok": true,
+      "ms": 1321
+    },
+    {
+      "name": "login",
+      "path": "/login",
+      "status": 200,
+      "ok": true,
+      "ms": 925
+    },
+    {
+      "name": "signup",
+      "path": "/signup",
+      "status": 200,
+      "ok": true,
+      "ms": 742
+    },
+    {
+      "name": "jobs-list",
+      "path": "/jobs",
+      "status": 200,
+      "ok": true,
+      "ms": 937
+    },
+    {
+      "name": "jobs-detail",
+      "path": "/jobs/job-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1059
+    },
+    {
+      "name": "jobs-new",
+      "path": "/jobs/new",
+      "status": 200,
+      "ok": true,
+      "ms": 1082
+    },
+    {
+      "name": "projects-list",
+      "path": "/projects",
+      "status": 200,
+      "ok": true,
+      "ms": 1087
+    },
+    {
+      "name": "projects-detail",
+      "path": "/projects/proj-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1030
+    },
+    {
+      "name": "projects-new",
+      "path": "/projects/new",
+      "status": 200,
+      "ok": true,
+      "ms": 1157
+    },
+    {
+      "name": "artists-list",
+      "path": "/artists",
+      "status": 200,
+      "ok": true,
+      "ms": 1011
+    },
+    {
+      "name": "artists-detail",
+      "path": "/artists/u-001",
+      "status": 200,
+      "ok": true,
+      "ms": 1280
+    },
+    {
+      "name": "mypage",
+      "path": "/mypage",
+      "status": 200,
+      "ok": true,
+      "ms": 965
+    },
+    {
+      "name": "profile-edit",
+      "path": "/profile/edit",
+      "status": 200,
+      "ok": true,
+      "ms": 926
+    },
+    {
+      "name": "admin-dashboard",
+      "path": "/admin",
+      "status": 200,
+      "ok": true,
+      "ms": 937
+    },
+    {
+      "name": "admin-approvals",
+      "path": "/admin/approvals",
+      "status": 200,
+      "ok": true,
+      "ms": 890
+    },
+    {
+      "name": "admin-jobs",
+      "path": "/admin/jobs",
+      "status": 200,
+      "ok": true,
+      "ms": 1060
+    },
+    {
+      "name": "admin-members",
+      "path": "/admin/members",
+      "status": 200,
+      "ok": true,
+      "ms": 922
+    },
+    {
+      "name": "admin-projects",
+      "path": "/admin/projects",
+      "status": 200,
+      "ok": true,
+      "ms": 908
+    },
+    {
+      "name": "admin-reports",
+      "path": "/admin/reports",
+      "status": 200,
+      "ok": true,
+      "ms": 915
+    },
+    {
+      "name": "admin-categories",
+      "path": "/admin/categories",
+      "status": 200,
+      "ok": true,
+      "ms": 882
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-01",
+      "name": "댄서 → 힙합 공고 필터 → 지원",
+      "ok": true,
+      "ms": 3128,
+      "error": null
+    },
+    {
+      "id": "S-02",
+      "name": "기업 → 공고 등록 폼 진입",
+      "ok": true,
+      "ms": 1413,
+      "error": null
+    },
+    {
+      "id": "S-03",
+      "name": "관리자 → 승인 큐 진입",
+      "ok": true,
+      "ms": 1773,
+      "error": null
+    },
+    {
+      "id": "S-04",
+      "name": "프로젝트 모집글 작성 폼 진입",
+      "ok": true,
+      "ms": 1680,
+      "error": null
+    },
+    {
+      "id": "S-05",
+      "name": "댄스학원 → 레슨 jobType 탭 → 강사 모집 상세",
+      "ok": true,
+      "ms": 4319,
+      "error": null
+    }
+  ],
+  "states": [
+    {
+      "name": "skeleton",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "skeleton",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "skeleton",
+      "viewport": "mobile",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "empty",
+      "viewport": "mobile",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "desktop",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "tablet",
+      "ok": true
+    },
+    {
+      "name": "error",
+      "viewport": "mobile",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-04-27T05:27:54.576Z",
+  "summary": {
+    "routesTotal": 20,
+    "routesOk": 20,
+    "scenariosTotal": 5,
+    "scenariosOk": 5,
+    "statesTotal": 9,
+    "statesOk": 9,
+    "errorsTotal": 0
+  }
+}
