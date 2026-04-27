@@ -1,0 +1,15 @@
+{
+  "title": "ARTWORK 예술인 협업 플랫폼",
+  "description": "예술인 채용공고, 프로젝트 모집, 운영자 콘솔 MVP. 회원 2종, jobType 4종(레슨/공연/행사/프로젝트), 검색, 지원, 승인 큐.",
+  "pages": 20,
+  "techStack": [
+    "Next.js 16",
+    "TypeScript",
+    "Tailwind 4",
+    "Supabase",
+    "Vercel"
+  ],
+  "category": "community",
+  "color": "#C53A0E",
+  "thumbnail": "d1-home.png"
+}
