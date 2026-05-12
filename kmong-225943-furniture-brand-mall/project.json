@@ -1,0 +1,16 @@
+{
+  "title": "가구전문 브랜드 통합 쇼핑몰 — 30개 조합사 통합몰 + 마홀앤 마이크로사이트",
+  "description": "8축 필터·배송 지연 자동 보상·콘텐츠 모듈 재사용·조합사 권한 분리 CMS를 한 데모에서 시연합니다. 사용자 15·관리자 10 = 25페이지.",
+  "pages": 25,
+  "techStack": [
+    "Next.js 16",
+    "TypeScript 5",
+    "Tailwind 4",
+    "shadcn/ui",
+    "Recharts",
+    "Lucide"
+  ],
+  "category": "commerce",
+  "color": "#5C4632",
+  "thumbnail": "01-home.png"
+}
