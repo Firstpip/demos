@@ -7,13 +7,13 @@
 
 클라이언트가 데모 URL을 처음 열었을 때 좌상단 역할 전환 토글로 **사용자 → 조합사 운영자 → 전체 관리자** 순서로 시점을 바꾸며 4개 시나리오를 종주한다. wow moment 후보 3종(R-05 자동 보상 / R-09 컬렉션 페이지 필터 / R-07 조합사 권한 분리)을 각 시나리오에 분배.
 
-### S-01: 거실 가구 빠른 좁힘 — 컬렉션 안에서 8축 필터로 3개 후보 확정 (P-1)
+### S-01: 거실 가구 빠른 좁힘 — 컬렉션 안에서 다축 필터로 3개 후보 확정 (P-1)
 - 페르소나: P-1 (30~40대 거실·주방 가구 구매 검토자)
-- 동기: 이사 일정에 맞춰 "원목 / 거실 8평 / 2주 내 배송"으로 단번에 좁혀 컬렉션 비교
+- 동기: 이사 일정에 맞춰 "원목 / 오크 컬러 / 2주 내 배송"으로 단번에 좁혀 컬렉션 비교
 - 관련 요구사항: R-01, R-09, R-12, R-23, R-24
-- 클릭 경로: 1) `/` 홈 진입 → 2) 첫 화면 "이번 주 컬렉션" 카드(`#collection-card-warm-living-26ss`) 클릭 → 3) `/collections/warm-living-26ss` 진입 → 4) 룩북 상단 8축 필터에서 `소재=원목`·`공간=거실 7~9평`·`배송일=2주 내` 칩 선택 → 5) 결과 12개 → 정렬 `인기순` 토글 → 6) 카드 3개 비교 hover → 7) `Quick View` 모달로 1개 옵션 확인
+- 클릭 경로: 1) `/` 홈 진입 → 2) 첫 화면 "이번 주 컬렉션" 카드(`#collection-card-warm-living-26ss`) 클릭 → 3) `/collections/warm-living-26ss` 진입 → 4) 룩북 상단 다축 필터에서 `소재=원목(오크)`·`컬러=오크`·`배송일=2주 내` 칩 선택 → 5) 결과 그리드 좁힘 → 정렬 `인기순` 토글 → 6) 카드 3개 비교 hover → 7) `Quick View` 모달로 1개 옵션 확인
 - 예상 소요: 60초
-- 기대 반응(wow moment): **컬렉션 페이지에 8축 필터가 그대로 살아있는 4) 단계** — 한샘몰·오늘의집·West Elm 모두 룩북은 감상용으로 두는데 우리는 룩북 안에서 즉시 좁힐 수 있다(차별화 기회 1, R-01·R-09 묶음). 칩 적용 시 좌측 12개 카드가 200ms 페이드/슬라이드로 재배치.
+- 기대 반응(wow moment): **컬렉션 페이지에 다축 필터(7축)가 그대로 살아있는 4) 단계** — 한샘몰·오늘의집·West Elm 모두 룩북은 감상용으로 두는데 우리는 룩북 안에서 즉시 좁힐 수 있다(차별화 기회 1, R-01·R-09 묶음). 칩 적용 시 좌측 카드 그리드가 200ms 페이드/슬라이드로 재배치.
 - 스크린샷 계획: PDF 데모 소개 첫 컷 = 4) 단계 칩 3개 활성화된 룩북 상단. 두 번째 컷 = 6) Quick View 모달 열린 화면.
 
 ### S-02: 배송 지연 자동 보상 시뮬레이션 (P-1)
@@ -64,8 +64,8 @@
 |------|--------|------|
 | `/` | 홈 | 시즌 띠배너 + "이번 주 컬렉션" 카드 + 카테고리 진입로 + MD's Pick + 마홀앤 마이크로사이트 입구 + 후기 모듈 |
 | `/collections` | 컬렉션 리스트 | 12개 컬렉션 카드 그리드, 시즌·테마 탭 |
-| `/collections/[slug]` | 컬렉션 상세 (룩북 + 8축 필터) | 룩북 핫스팟 + 좌측 8축 필터 + 카드 그리드 + Quick View 모달 |
-| `/products` | 카테고리 PLP | 8축 필터 + 정렬·뷰 토글 + 무한스크롤(데모는 페이지네이션) |
+| `/collections/[slug]` | 컬렉션 상세 (룩북 + 다축 필터(7축)) | 룩북 핫스팟 + 좌측 다축 필터(7축) + 카드 그리드 + Quick View 모달 |
+| `/products` | 카테고리 PLP | 다축 필터(7축) + 정렬·뷰 토글 + 무한스크롤(데모는 페이지네이션) |
 | `/products/[slug]` | 상품 상세 | Tier 1+2 전수 (아래 6번 참조) |
 | `/search` | 키워드 검색 결과 | 검색어 + 정렬 + 빈 상태 회유 카피 |
 | `/cart` | 장바구니 | 수량 조정·쿠폰 적용·배송지 입력 |
@@ -157,7 +157,7 @@
 ### 컬렉션 상세 `/collections/[slug]` (S-01 핵심)
 - 룩북 영상 또는 메인 이미지
 - 룩북 핫스팟 (이미지 위 5~10개 점)
-- 좌측 8축 필터 패널 (`R-01`) — 칩 적용 시 카드 페이드/슬라이드 200ms
+- 좌측 다축 필터(7축) 패널 (`R-01`) — 칩 적용 시 카드 페이드/슬라이드 200ms
 - 결과 카드 그리드 + 정렬 + 뷰 토글
 - Quick View 모달
 - 빈 상태(필터 결과 0): "조건을 한 단계 풀어볼까요?" + 추천 칩 3개
@@ -225,7 +225,7 @@
 | 헤더 GNB | `header-nav`, `header-search`, `cart-button`, `role-switcher` |
 | 홈 컬렉션 카드 | `collection-card-{slug}` (예 `collection-card-warm-living-26ss`) |
 | 마홀앤 진입 배너 | `maholn-entry-banner` |
-| 8축 필터 칩 | `filter-chip-{axis}-{value}` (axis: category·use·brand·material·delivery·price·space·series) |
+| 다축 필터(7축) 칩 | `filter-chip-{axis}-{value}` (axis: use·brand·material·color·size·delivery·price) — 제품군은 Header GNB, 시리즈는 `/collections` 네비로 분리 |
 | 적용 칩 누적 바 | `filter-applied-bar`, `filter-reset-button` |
 | 정렬 토글 | `sort-toggle`, `sort-option-{key}` |
 | 상품 카드 | `product-card-{slug}`, `quick-view-button-{slug}` |
@@ -268,9 +268,11 @@ interface Product {
   options: { color: string[]; size: string[] };
   stock: Record<string, number>;       // `${color}|${size}` -> qty
   axes: {
-    category: string; use: string[]; material: string[];
-    deliveryDays: number; spaceFit: string[]; series: string;
+    category: string; subCategory: string;  // 네비 분류 (필터 아님)
+    use: string[]; material: string[];
+    deliveryDays: number;
   };
+  // 필터 축 7개: use·brand(brandId)·material·color(options.color)·size(options.size)·delivery(deliveryDays)·price(priceSale)
   images: string[];
   descriptionHtml: string;             // RichTextEditor output
   rating: number; reviewCount: number;

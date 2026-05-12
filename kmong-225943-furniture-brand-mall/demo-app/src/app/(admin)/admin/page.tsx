@@ -66,7 +66,7 @@ export default function AdminDashboardPage() {
   }, [])
 
   const kpis = [
-    { id: 1, icon: Filter, label: '8축 필터 사용률', value: '67%', target: '≥ 50%', desc: '방문자 중 1개 이상 필터 적용' },
+    { id: 1, icon: Filter, label: '다축 필터 사용률', value: '67%', target: '≥ 50%', desc: '방문자 중 1개 이상 필터 적용' },
     { id: 2, icon: Clock, label: '상품 상세 평균 체류', value: '78초', target: '≥ 60초', desc: '데모 환경 mock 추정치' },
     { id: 3, icon: Sparkles, label: '배송 지연 자동 보상', value: `${kpi3}%`, target: '100%', desc: `지연 ${delayedOrders.length}건 중 자동 발급` },
     { id: 4, icon: Globe, label: '마홀앤→본체 전환율', value: '6.2%', target: '≥ 5%', desc: '마이크로사이트 진입 → 본체 결제' },

@@ -7,18 +7,17 @@ import { brandById, brands } from '@/data/brands'
 import { cn } from '@/lib/utils'
 
 export interface FilterState {
-  category: string[]
   use: string[]
   brand: string[]
   material: string[]
   delivery: string[]
   price: string[]
-  space: string[]
-  series: string[]
+  color: string[]
+  size: string[]
 }
 
 export const emptyFilter: FilterState = {
-  category: [], use: [], brand: [], material: [], delivery: [], price: [], space: [], series: [],
+  use: [], brand: [], material: [], delivery: [], price: [], color: [], size: [],
 }
 
 const PRICE_RANGES: Array<{ key: string; label: string; min: number; max: number }> = [
@@ -43,32 +42,29 @@ interface AxisDef {
 
 export function buildAxes(source: Product[]): AxisDef[] {
   const uniq = (arr: string[]) => Array.from(new Set(arr)).sort()
-  const categories = uniq(source.map((p) => p.axes.category))
   const uses = uniq(source.flatMap((p) => p.axes.use))
   const brandList = uniq(source.map((p) => p.brandId))
   const materials = uniq(source.flatMap((p) => p.axes.material))
-  const spaces = uniq(source.flatMap((p) => p.axes.spaceFit))
-  const series = uniq(source.map((p) => p.axes.series))
+  const colors = uniq(source.flatMap((p) => p.options.color))
+  const sizes = uniq(source.flatMap((p) => p.options.size))
   return [
-    { key: 'category', label: '제품군', options: categories.map((c) => ({ key: c, label: c })) },
     { key: 'use', label: '용도', options: uses.map((u) => ({ key: u, label: u })) },
     { key: 'brand', label: '브랜드', options: brandList.map((b) => ({ key: b, label: brandById(b)?.name ?? b })) },
     { key: 'material', label: '소재', options: materials.map((m) => ({ key: m, label: m })) },
+    { key: 'color', label: '컬러', options: colors.map((c) => ({ key: c, label: c })) },
+    { key: 'size', label: '사이즈', options: sizes.map((s) => ({ key: s, label: s })) },
     { key: 'delivery', label: '배송일', options: DELIVERY_BUCKETS.map((d) => ({ key: d.key, label: d.label })) },
     { key: 'price', label: '가격', options: PRICE_RANGES.map((p) => ({ key: p.key, label: p.label })) },
-    { key: 'space', label: '공간', options: spaces.map((s) => ({ key: s, label: s })) },
-    { key: 'series', label: '시리즈', options: series.map((s) => ({ key: s, label: s })) },
   ]
 }
 
 export function applyFilter(source: Product[], state: FilterState): Product[] {
   return source.filter((p) => {
-    if (state.category.length && !state.category.includes(p.axes.category)) return false
     if (state.use.length && !p.axes.use.some((u) => state.use.includes(u))) return false
     if (state.brand.length && !state.brand.includes(p.brandId)) return false
     if (state.material.length && !p.axes.material.some((m) => state.material.includes(m))) return false
-    if (state.space.length && !p.axes.spaceFit.some((s) => state.space.includes(s))) return false
-    if (state.series.length && !state.series.includes(p.axes.series)) return false
+    if (state.color.length && !p.options.color.some((c) => state.color.includes(c))) return false
+    if (state.size.length && !p.options.size.some((s) => state.size.includes(s))) return false
     if (state.delivery.length) {
       const ok = state.delivery.some((key) => {
         const bucket = DELIVERY_BUCKETS.find((b) => b.key === key)
@@ -103,9 +99,9 @@ export function FilterPanel({ source, state, onChange }: PanelProps) {
   }
 
   return (
-    <aside aria-label="8축 필터" className="rounded-lg border bg-surface p-4">
+    <aside aria-label="다축 필터" className="rounded-lg border bg-surface p-4">
       <div className="mb-3 flex items-center justify-between">
-        <p className="text-sm font-semibold text-text">8축 필터</p>
+        <p className="text-sm font-semibold text-text">필터</p>
         <button
           type="button"
           id="filter-reset-button"

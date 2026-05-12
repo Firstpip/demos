@@ -5,7 +5,7 @@
 
 | R-ID | 요구사항 | 분류 | 데모 위치·확인 방법 |
 |------|----------|------|---------------------|
-| R-01 | 카테고리 8축 필터링 | 데모 커버 | `/products` `FilterPanel` (8축 chip-button) + `/collections/[slug]` 동일 패널 (S-01 차별) |
+| R-01 | 카테고리 다축 필터링 | 데모 커버 | Header GNB(제품군 6) + `/collections` 페이지(시리즈 12) + `/products`·`/collections/[slug]` 공용 `FilterPanel` 7축(용도·브랜드·소재·컬러·사이즈·배송일·가격). RFP "등으로" 예시 8개를 GNB(2: 제품군·시리즈) + PLP 필터(5) + 가구몰 표준 추가(2: 컬러·사이즈)로 분배해 동등 이상 탐색 경로 보장 |
 | R-02 | 회원가입 + SNS 로그인 | 데모 커버 | `/sign-in` SNS 4종 mock + `/sign-up` |
 | R-03 | 장바구니·결제·주문·쿠폰·적립금 | 데모 커버 | `/cart` 쿠폰·적립금 + `/checkout` + `/account` |
 | R-04 | 상품상세 태그·탭 + 연관/추천 | 데모 커버 | `/products/[slug]` Tier 1+2 + 같은 컬렉션 4 + 같은 브랜드 4 |
@@ -45,14 +45,14 @@
 
 | 페르소나 | 시연 시나리오 | 데모 페이지 |
 |----------|---------------|-------------|
-| P-1 (메인 사용자) | S-01 (컬렉션 8축 필터) · S-02 (배송 자동 보상) | `/`, `/collections/*`, `/products/*`, `/cart`, `/checkout`, `/account/orders/*` |
+| P-1 (메인 사용자) | S-01 (컬렉션 다축 필터) · S-02 (배송 자동 보상) | `/`, `/collections/*`, `/products/*`, `/cart`, `/checkout`, `/account/orders/*` |
 | P-2 (마홀앤 팬) | S-03 (마이크로사이트 → 본체 회유) | `/maholn`, `/maholn/lookbook/*`, `/maholn/about`, `/products/maholn-*` |
 | P-3 (조합사 운영자) | S-04 (권한 분리 CMS) | RoleSwitcher partner → `/admin`, `/admin/cms/partner/raonwood` |
 
 ## 카테고리 어휘 정합성
 
 RFP 카테고리(가구 B2C 통합 쇼핑몰, 디자인 1순위) — 데모에 반영된 어휘:
-- "컬렉션", "룩북", "마이크로사이트", "조합사", "8축 필터", "배송 자동 보상", "콘텐츠 모듈" — analysis.md 페르소나 키워드와 일치
+- "컬렉션", "룩북", "마이크로사이트", "조합사", "다축 필터", "배송 자동 보상", "콘텐츠 모듈" — analysis.md 페르소나 키워드와 일치
 - 마케팅 과장 어휘 0건 (CLAUDE.md 톤 규칙 준수)
 
 ## R-ID 본문 비노출 검사

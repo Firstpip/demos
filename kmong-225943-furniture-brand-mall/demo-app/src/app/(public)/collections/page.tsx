@@ -20,7 +20,7 @@ export default function CollectionsPage() {
       <header className="mb-6">
         <h1 className="text-2xl font-semibold text-text">컬렉션</h1>
         <p className="mt-1 text-sm text-text-muted">
-          시즌·테마 컬렉션 12개. 컬렉션 안에서 8축 필터로 후보를 좁힐 수 있습니다.
+          시즌·테마 컬렉션 12개. 컬렉션 안에서 다축 필터로 후보를 좁힐 수 있습니다.
         </p>
       </header>
       <div className="mb-5 flex flex-wrap gap-2" role="tablist" aria-label="시즌 필터">
