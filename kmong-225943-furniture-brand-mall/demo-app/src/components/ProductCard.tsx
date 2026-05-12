@@ -22,10 +22,11 @@ export function ProductCard({ product: original, onQuickView }: Props) {
   const couponPrice = Math.round(product.priceSale * 0.95 / 1000) * 1000
 
   return (
-    <article
+    <Link
+      href={`/products/${product.slug}`}
       id={`product-card-${product.slug}`}
       data-rid="R-04"
-      className="group flex flex-col overflow-hidden rounded-lg border bg-surface transition hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-lg border bg-surface transition hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
     >
       <div className="relative aspect-[4/5] bg-surface-2">
         <div className="flex h-full items-center justify-center text-7xl font-light text-text-muted/40">
@@ -55,7 +56,7 @@ export function ProductCard({ product: original, onQuickView }: Props) {
           <button
             type="button"
             id={`quick-view-button-${product.slug}`}
-            onClick={() => onQuickView(product.id)}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); onQuickView(product.id) }}
             className="absolute bottom-2 right-2 hidden items-center gap-1 rounded-md bg-surface/95 px-2 py-1 text-xs font-medium shadow-sm group-hover:inline-flex"
             aria-label={`${product.name} 빠른 보기`}
           >
@@ -65,9 +66,9 @@ export function ProductCard({ product: original, onQuickView }: Props) {
       </div>
       <div className="flex flex-1 flex-col gap-1.5 p-3">
         <p className="text-[11px] font-medium uppercase tracking-wide text-text-muted">{brand?.name}</p>
-        <Link href={`/products/${product.slug}`} className="line-clamp-2 text-sm font-medium text-text hover:underline">
+        <p className="line-clamp-2 text-sm font-medium text-text group-hover:underline">
           {product.name}
-        </Link>
+        </p>
         <p className="line-clamp-1 text-xs text-text-muted">{product.subtitle}</p>
         <div className="mt-1 flex items-baseline gap-2">
           {discount > 0 && (
@@ -79,6 +80,6 @@ export function ProductCard({ product: original, onQuickView }: Props) {
           쿠폰가 {formatKRW(couponPrice)} · 적립 {product.rewardPoint.toLocaleString()}P
         </p>
       </div>
-    </article>
+    </Link>
   )
 }

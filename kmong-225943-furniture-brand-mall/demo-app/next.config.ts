@@ -4,7 +4,7 @@ const isPages = process.env.GITHUB_PAGES === 'true'
 const basePath = isPages ? '/demos/kmong-225943-demo' : ''
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  ...(isPages && { output: 'export' as const }),
   trailingSlash: true,
   basePath,
   images: { unoptimized: true },
