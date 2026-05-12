@@ -17,7 +17,7 @@ const specs: Spec[] = [
     title: 'Warm Living 26SS',
     subtitle: '봄의 거실을 위한 따뜻한 톤의 우드 컬렉션',
     season: '26SS',
-    description: '오크와 월넛 톤의 거실 가구를 한 호흡으로 모았습니다. 8축 필터로 평수·소재·배송일을 좁히면서 룩북 안에서 그대로 비교하세요.',
+    description: '오크와 월넛 톤의 거실 가구를 한 호흡으로 모았습니다. 다축 필터로 컬러·소재·배송일을 좁히면서 룩북 안에서 그대로 비교하세요.',
     filter: (s) => s.includes('maholn-oak') || s.includes('walnut') || s.includes('linen') || s.includes('softline') || s.includes('velvet-room'),
     hotspots: [
       { x: 28, y: 42, productSlug: 'maholn-oak-sofa-3s', label: '마홀앤 오크 소파 3인용' },

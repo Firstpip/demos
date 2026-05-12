@@ -46,7 +46,7 @@
 
 | ID | 시나리오 | 핵심 wow | 진입 경로 |
 |----|----------|----------|-----------|
-| S-01 | 컬렉션 안 8축 필터 | 룩북 안에서 즉시 좁힘 | `/` → collection-card-warm-living-26ss → 8축 칩 적용 |
+| S-01 | 컬렉션 안 다축 필터(7축) | 룩북 안에서 즉시 좁힘 | `/` → collection-card-warm-living-26ss → 다축 칩 적용 |
 | S-02 | 배송 지연 자동 보상 | 시간 진행 → 적립금 토스트 | `/account/orders/order-DEMO-S02` → +3일 진행 |
 | S-03 | 마홀앤 → 본체 회유 | 동일 카드 본체에서 등장 | `/maholn/lookbook/2026-spring` → 핫스팟 → 본체 상세 |
 | S-04 | 조합사 권한 분리 CMS | 권한 차단 + 자동 로깅 | RoleSwitcher partner → /admin/cms/partner/raonwood → 가격 편집 + 잠금 메뉴 클릭 |
@@ -90,3 +90,30 @@
 3. `./workflow/scripts/demo-audit.sh http://localhost:3000` (Lighthouse + axe)
 4. 반응형 확인 (375 / 768 / 1280)
 5. RoleSwitcher로 4역할 전환 동선
+
+## Step 6 필터 재구성 (2026-05-12)
+
+- 8축 → 7축 + GNB 흡수: 제품군(Header GNB로), 시리즈(`/collections` 페이지로), 공간(제품군과 의미 중복) 제거. 컬러·사이즈 추가 (가구몰 표준 필터).
+- 결과: FilterPanel chip 76개 → 약 50개. `Product.axes`에서 `spaceFit`·`series` 제거 (display copy 용 `series`는 SeedSpec 내부에 유지).
+- `/products?category=X` 등 URL 라우팅은 사전 scope 필터로 분리 (필터 칩에서 category 제거).
+- R-01 매핑 갱신: RFP "등으로" 예시 8개 = GNB(2) + PLP(5) + 가구몰 표준 추가(2)로 분배.
+
+## Step 6 자동 감사 결과 (2026-05-12)
+
+- 정적 프로덕션 빌드(`npm run build` + `npx serve out`) 대상 측정.
+- Lighthouse: Performance **85** / Accessibility **100** / Best Practices **100**
+- axe-core/puppeteer 6개 핵심 경로(/, /products, /products/[slug], /account/orders/[id], /admin, /admin/cms/partner/[id]) violation **0**
+- 4단 배포 검증 통과: 인덱스 등록 OK · 썸네일 200 · 데모 루트 200 · 핵심 라우트 6개 200
+- 라이브 URL: https://firstpip.github.io/demos/kmong-225943-demo/
+
+### Step 6 라운드에서 수정한 axe 이슈
+
+- `aria-prohibited-attr` (StarRating span에 role="img" 부여)
+- `nested-interactive` (MediaGallery 컨테이너에서 role="img" 제거, 내부 span으로 이전)
+- `landmark-complementary-is-top-level` (DeliverySimulator <aside> → <div>)
+- `heading-order` (PartnerCmsEditor 모든 h3 → h2)
+- `color-contrast` (잔존 0)
+  - Header 유틸리티 nav `/80` opacity 제거 → 전체 muted
+  - AdminSidebar 잠금 항목 `/40` → `/90` + italic + aria-disabled
+  - 색상 토큰 darken: `--accent #c58f2a→#8a5f1c` / `--success #2f8f5a→#1b6a3f` / `--warn #c0871d→#815818`
+  - 상태 pill `bg-{token}/15 text-{token}` → `bg-{token} text-white` (admin/orders/users/account/coupons/brands)

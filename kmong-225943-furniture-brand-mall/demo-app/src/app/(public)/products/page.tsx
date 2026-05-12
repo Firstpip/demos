@@ -42,7 +42,6 @@ function ProductsInner() {
 
   useEffect(() => {
     const next: FilterState = { ...emptyFilter }
-    if (categoryParam) next.category = [categoryParam]
     if (brandParam) {
       const brand = brandBySlug(brandParam)
       if (brand) next.brand = [brand.id]
@@ -51,11 +50,17 @@ function ProductsInner() {
     setPage(1)
   }, [categoryParam, brandParam])
 
-  const filtered = useMemo(() => {
-    const base = applyFilter(products, filter)
-    const narrowed = subCategoryParam ? base.filter((p) => p.axes.subCategory === subCategoryParam) : base
-    return sortProducts(narrowed, sort)
-  }, [filter, sort, subCategoryParam])
+  const scoped = useMemo(() => {
+    let base = products
+    if (categoryParam) base = base.filter((p) => p.axes.category === categoryParam)
+    if (subCategoryParam) base = base.filter((p) => p.axes.subCategory === subCategoryParam)
+    return base
+  }, [categoryParam, subCategoryParam])
+
+  const filtered = useMemo(
+    () => sortProducts(applyFilter(scoped, filter), sort),
+    [scoped, filter, sort],
+  )
   const visible = filtered.slice(0, page * PAGE_SIZE)
   const hasMore = visible.length < filtered.length
 
@@ -132,7 +137,7 @@ function ProductsInner() {
 
       <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
         <div className="hidden lg:block">
-          <FilterPanel source={products} state={filter} onChange={(s) => { setFilter(s); setPage(1) }} />
+          <FilterPanel source={scoped} state={filter} onChange={(s) => { setFilter(s); setPage(1) }} />
         </div>
         <div>
           <AppliedChips state={filter} onChange={(s) => { setFilter(s); setPage(1) }} />
@@ -176,7 +181,7 @@ function ProductsInner() {
             className="absolute bottom-0 max-h-[80vh] w-full overflow-y-auto rounded-t-xl bg-surface p-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <FilterPanel source={products} state={filter} onChange={(s) => { setFilter(s); setPage(1) }} />
+            <FilterPanel source={scoped} state={filter} onChange={(s) => { setFilter(s); setPage(1) }} />
             <button
               type="button"
               onClick={() => setFilterOpen(false)}

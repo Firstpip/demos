@@ -37,14 +37,13 @@ export interface Collection {
 }
 
 export type FilterAxis =
-  | 'category'
   | 'use'
   | 'brand'
   | 'material'
   | 'delivery'
   | 'price'
-  | 'space'
-  | 'series'
+  | 'color'
+  | 'size'
 
 export interface Product {
   id: string
@@ -64,8 +63,6 @@ export interface Product {
     use: string[]
     material: string[]
     deliveryDays: number
-    spaceFit: string[]
-    series: string
   }
   thumbLetter: string
   galleryLetters: string[]

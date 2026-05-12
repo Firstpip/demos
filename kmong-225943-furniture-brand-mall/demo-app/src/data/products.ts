@@ -65,7 +65,6 @@ function remapCategory(legacy: string): typeof categories[number] {
 }
 const uses = ['일상', '재택근무', '손님맞이', '가족', '취미', '수면', '식사', '독서']
 const materials = ['원목(오크)', '원목(월넛)', '원목(소나무)', '엔지니어드 우드', '메탈+우드', '패브릭(린넨)', '패브릭(부클레)', '가죽(천연)', '라탄', '대리석']
-const spaceFits = ['원룸 5평', '거실 4~6평', '거실 7~9평', '거실 10평+', '침실 3~4평', '침실 5평+', '키즈룸', '베란다·홀']
 const seriesPool = ['Warm Living', 'Soft Comfort', 'Modern Line', 'Heritage', 'Studio Compact', 'Family Calm']
 const colorsPool = ['오크', '월넛', '아이보리', '차콜', '세이지', '테라코타', '딥브라운', '크림']
 const sizesPool = ['S', 'M', 'L', 'XL']
@@ -198,9 +197,8 @@ function buildProduct(spec: SeedSpec, idx: number): Product {
   colors.forEach((c) => sizes.forEach((s) => { stock[`${c}|${s}`] = 1 + (seed * 7 + s.length) % 9 }))
   const useArr = [uses[seed % uses.length], uses[(seed + 2) % uses.length]]
   const matArr = [materials[seed % materials.length]]
-  const spaceArr = [spaceFits[seed % spaceFits.length]]
   const deliveryDays = [3, 5, 7, 10, 14, 21][seed % 6]
-  const desc = `<h2>제품 소개</h2><p>${spec.name}은(는) ${brand.name}의 ${spec.series} 시리즈로, ${spec.category} 공간에 자연스럽게 녹아드는 비례와 마감을 갖췄습니다.</p><p>표면은 무광 도장으로 일상에서 묻어나는 작은 흔적이 시간이 지날수록 가구의 결로 자리잡습니다. 조립은 30분 내외, 도장 케어 안내문이 동봉됩니다.</p><h3>사용 권장</h3><ul><li>${useArr.join(', ')} 용도에 적합합니다.</li><li>권장 공간: ${spaceArr.join(', ')}</li><li>주요 소재: ${matArr.join(', ')}</li></ul><p>${brand.description}</p>`
+  const desc = `<h2>제품 소개</h2><p>${spec.name}은(는) ${brand.name}의 ${spec.series} 시리즈로, ${spec.category} 공간에 자연스럽게 녹아드는 비례와 마감을 갖췄습니다.</p><p>표면은 무광 도장으로 일상에서 묻어나는 작은 흔적이 시간이 지날수록 가구의 결로 자리잡습니다. 조립은 30분 내외, 도장 케어 안내문이 동봉됩니다.</p><h3>사용 권장</h3><ul><li>${useArr.join(', ')} 용도에 적합합니다.</li><li>주요 소재: ${matArr.join(', ')}</li><li>주요 컬러: ${colors.join(', ')}</li></ul><p>${brand.description}</p>`
   return {
     id: `prd-${spec.slug}`,
     slug: spec.slug,
@@ -219,8 +217,6 @@ function buildProduct(spec: SeedSpec, idx: number): Product {
       use: useArr,
       material: matArr,
       deliveryDays,
-      spaceFit: spaceArr,
-      series: spec.series,
     },
     thumbLetter: spec.name.charAt(0),
     galleryLetters: [spec.name.charAt(0), spec.category.charAt(0), spec.series.charAt(0), brand.name.charAt(0), '+'],
