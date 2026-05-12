@@ -1,0 +1,28 @@
+import type { ContentModule } from '@/lib/types'
+
+export const contentModules: ContentModule[] = [
+  { id: 'cm-1', type: 'lookbook-card', title: '2026 Spring 룩북', body: '마홀앤이 제안하는 봄의 거실. 오크 소파부터 린넨 암체어까지 한 페이지에 모았습니다.', ctaLabel: '룩북 보기', ctaHref: '/maholn/lookbook/2026-spring/', letter: '春', usedIn: ['home', 'maholn-home', 'product-detail'] },
+  { id: 'cm-2', type: 'banner', title: '봄맞이 10% 쿠폰', body: 'SPRING10 코드를 결제 단계에서 입력하세요. 20만원 이상 주문 시 10% 즉시 할인.', ctaLabel: '쿠폰 받기', ctaHref: '/account/coupons/', letter: '%', usedIn: ['home', 'category'] },
+  { id: 'cm-3', type: 'story', title: '국내산 오크 원목, 라온우드의 작업실', body: '나무를 자르고 도장을 입히는 모든 공정을 한 공방에서. 라온우드의 작업 과정을 짧은 영상과 함께 소개합니다.', ctaLabel: '브랜드 보기', ctaHref: '/brands/raonwood/', letter: '匠', usedIn: ['home', 'product-detail'] },
+  { id: 'cm-4', type: 'review-quote', title: '"거실의 호흡이 달라졌어요"', body: '마홀앤 오크 소파 3인용 후기. "원래 쓰던 가죽 소파를 정리하고 옮긴 첫날부터 거실 분위기가 바뀌었습니다." — 김지윤 님', ctaLabel: '후기 더 보기', ctaHref: '/products/maholn-oak-sofa-3s/', letter: '評', usedIn: ['home', 'maholn-home', 'product-detail'] },
+  { id: 'cm-5', type: 'lookbook-card', title: '침실 컬렉션 — 잠의 결을 위한 디자인', body: '침대·헤드보드·사이드 테이블의 통합 코디.', ctaLabel: '컬렉션 보기', ctaHref: '/maholn/lookbook/bedroom-collection/', letter: '夜', usedIn: ['maholn-home', 'category'] },
+  { id: 'cm-6', type: 'lookbook-card', title: '2025 Archive — 한 해를 거슬러', body: '지난 시즌의 베스트 셀렉션. 결이 변하지 않는 가구들.', ctaLabel: '아카이브 보기', ctaHref: '/maholn/lookbook/2025-archive/', letter: '輪', usedIn: ['maholn-home'] },
+  { id: 'cm-7', type: 'banner', title: '거실 세트 15% 쿠폰', body: 'LIVING15 코드, 80만원 이상 거실 세트 주문 시 즉시 할인.', ctaLabel: '거실 가구 보기', ctaHref: '/products?category=거실', letter: '%', usedIn: ['home', 'category'] },
+  { id: 'cm-8', type: 'story', title: '배송 지연 자동 보상이 동작하는 방식', body: '예약일을 초과해 배송이 지연되면 자동으로 적립금이 지급됩니다. 별도 신청 없이, 매일 새벽 동기화.', ctaLabel: '정책 보기', letter: '響', usedIn: ['home', 'category'] },
+  { id: 'cm-9', type: 'lookbook-card', title: '작은 공간을 위한 마홀앤', body: '5~10평 거실에 어울리는 가변 가구.', ctaLabel: '컬렉션 보기', ctaHref: '/maholn/lookbook/small-spaces/', letter: '小', usedIn: ['maholn-home', 'product-detail'] },
+  { id: 'cm-10', type: 'review-quote', title: '"공방에서 직접 만든 단단함"', body: '라온우드 국산 오크 침대 SS 후기. "10년 후에도 같은 결로 남아있을 것 같습니다." — 박서연 님', ctaLabel: '브랜드 보기', ctaHref: '/brands/raonwood/', letter: '工', usedIn: ['home', 'product-detail'] },
+  { id: 'cm-11', type: 'banner', title: '신규 회원 2만원 쿠폰', body: 'WELCOME20 자동 발급. 10만원 이상 구매 시 즉시 할인.', ctaLabel: '가입하기', ctaHref: '/sign-up/', letter: '%', usedIn: ['home'] },
+  { id: 'cm-12', type: 'story', title: '30개 조합사가 한 결로 모이는 이유', body: '브랜드는 다르지만 거실의 결은 한 호흡. 가구·컬렉션·룩북 어디에서도 동일한 카드 컴포넌트로 만납니다.', ctaLabel: '브랜드 둘러보기', ctaHref: '/products', letter: '結', usedIn: ['home', 'maholn-home'] },
+  { id: 'cm-13', type: 'lookbook-card', title: 'Warm Living 26SS 컬렉션', body: '봄의 거실, 따뜻한 톤의 우드 큐레이션.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/warm-living-26ss/', letter: 'W', usedIn: ['home', 'product-detail'] },
+  { id: 'cm-14', type: 'lookbook-card', title: 'Soft Comfort 26SS', body: '오래 머무는 거실의 부드러운 패브릭.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/soft-comfort-26ss/', letter: 'S', usedIn: ['home', 'category'] },
+  { id: 'cm-15', type: 'lookbook-card', title: 'Heritage Oak 26SS', body: '국내산 오크 원목 정통 라인.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/heritage-oak-26ss/', letter: 'H', usedIn: ['home', 'product-detail'] },
+  { id: 'cm-16', type: 'banner', title: '마홀앤 단골 7% 쿠폰', body: 'MAHOLNVIP 코드, 25만원 이상 주문 시 7% 할인.', ctaLabel: '쿠폰 받기', letter: '%', usedIn: ['maholn-home'] },
+  { id: 'cm-17', type: 'review-quote', title: '"필터 한 번에 후보가 정리됐어요"', body: '컬렉션 페이지의 8축 필터 후기. "원목 + 거실 7~9평 + 2주 내 배송으로 좁혔더니 정말 후보가 3개로 줄었습니다." — 이도원 님', ctaLabel: '필터 시연 가이드', letter: '篩', usedIn: ['home'] },
+  { id: 'cm-18', type: 'story', title: '조합사가 직접 운영하는 페이지', body: '4월부터 30개 조합사 운영자가 자기 브랜드 페이지의 가격·이미지를 직접 관리합니다. 본체 운영자 승인 없이 즉시 반영.', ctaLabel: '정책 보기', letter: '管', usedIn: ['home'] },
+  { id: 'cm-19', type: 'lookbook-card', title: 'Family Calm 26SS', body: '가족이 함께 쉬는 침실·키즈룸.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/family-calm-26ss/', letter: 'F', usedIn: ['category'] },
+  { id: 'cm-20', type: 'lookbook-card', title: 'Modern Line 26SS', body: '단정한 선과 메탈·우드 결합.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/modern-line-26ss/', letter: 'M', usedIn: ['category'] },
+  { id: 'cm-21', type: 'banner', title: '대형 가구 무료 설치', body: '서울·경기 전 지역 무료 설치 + 폐가구 회수 옵션 제공.', ctaLabel: '안내 보기', letter: '配', usedIn: ['category'] },
+  { id: 'cm-22', type: 'review-quote', title: '"마이크로사이트와 본체가 자연스럽게 이어졌어요"', body: '마홀앤 마이크로사이트에서 카드를 클릭하니 본체 상세에서 동일한 카드가 다시 등장. — 정시우 님', ctaLabel: '시연 보기', letter: '連', usedIn: ['maholn-home'] },
+  { id: 'cm-23', type: 'story', title: '마홀앤의 시간이 흐르는 방식', body: '단단한 가구 한 점이 거실에 머무는 동안 가족의 결이 자랍니다. 마홀앤은 그 시간을 기록합니다.', ctaLabel: '브랜드 스토리', ctaHref: '/maholn/about/', letter: '時', usedIn: ['maholn-home'] },
+  { id: 'cm-24', type: 'lookbook-card', title: 'WorkHome 26FW', body: '재택 근무를 위한 서재·홈오피스 셋업.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/workhome-26fw/', letter: 'W', usedIn: ['category', 'home'] },
+]

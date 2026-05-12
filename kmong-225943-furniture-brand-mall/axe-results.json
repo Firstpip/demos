@@ -1,0 +1,38 @@
+[
+  {
+    "url": "/",
+    "role": "guest",
+    "violations": 0,
+    "ids": []
+  },
+  {
+    "url": "/products/",
+    "role": "guest",
+    "violations": 0,
+    "ids": []
+  },
+  {
+    "url": "/products/oakhaus-dining-table-1800/",
+    "role": "guest",
+    "violations": 0,
+    "ids": []
+  },
+  {
+    "url": "/account/orders/order-DEMO-S02/",
+    "role": "member",
+    "violations": 0,
+    "ids": []
+  },
+  {
+    "url": "/admin/",
+    "role": "admin",
+    "violations": 0,
+    "ids": []
+  },
+  {
+    "url": "/admin/cms/partner/raonwood/",
+    "role": "partner",
+    "violations": 0,
+    "ids": []
+  }
+]
