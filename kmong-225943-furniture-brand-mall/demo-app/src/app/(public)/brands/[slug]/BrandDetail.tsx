@@ -94,8 +94,14 @@ export function BrandDetail({ brand, products }: Props) {
               </div>
             )}
           </div>
-          <div className="relative hidden aspect-square items-center justify-center overflow-hidden rounded-lg lg:flex" style={{ backgroundColor: brand.primaryColor + '30' }}>
-            <span aria-hidden className="text-[240px] font-light" style={{ color: brand.primaryColor }}>
+          <div className="relative hidden aspect-square overflow-hidden rounded-lg lg:flex">
+            <img
+              src={brand.imageUrl}
+              alt={brand.name}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div aria-hidden className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 50%, ${brand.primaryColor}66 100%)` }} />
+            <span aria-hidden className="absolute right-6 bottom-6 rounded-md bg-surface/95 px-3 py-1.5 text-2xl font-light" style={{ color: brand.primaryColor }}>
               {brand.logoLetter}
             </span>
           </div>

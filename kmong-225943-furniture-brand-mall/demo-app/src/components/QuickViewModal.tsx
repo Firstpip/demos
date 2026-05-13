@@ -9,6 +9,7 @@ import type { Product } from '@/lib/types'
 import { brandById } from '@/data/brands'
 import { useCart } from '@/lib/contexts/cart'
 import { formatKRW, cn } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 interface Props {
   product: Product | null
@@ -53,8 +54,12 @@ export function QuickViewModal({ product, open, onOpenChange }: Props) {
           aria-describedby={undefined}
         >
           <div className="grid gap-0 sm:grid-cols-[280px_1fr]">
-            <div className="flex aspect-square items-center justify-center bg-surface-2 text-7xl font-light text-text-muted/50">
-              {product.thumbLetter}
+            <div className="relative aspect-square overflow-hidden bg-surface-2">
+              <img
+                src={productImage(product.axes.category, product.axes.subCategory, product.id, 0, { name: product.name, slug: product.slug })}
+                alt={product.name}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
             </div>
             <div className="flex flex-col gap-3 p-5">
               <Dialog.Title asChild>

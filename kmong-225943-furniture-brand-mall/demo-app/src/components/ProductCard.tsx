@@ -6,6 +6,7 @@ import type { Product } from '@/lib/types'
 import { brandById } from '@/data/brands'
 import { usePartnerOverrides } from '@/lib/contexts/partnerOverrides'
 import { formatKRW, cn } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 interface Props {
   product: Product
@@ -28,10 +29,13 @@ export function ProductCard({ product: original, onQuickView }: Props) {
       data-rid="R-04"
       className="group flex flex-col overflow-hidden rounded-lg border bg-surface transition hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
     >
-      <div className="relative aspect-[4/5] bg-surface-2">
-        <div className="flex h-full items-center justify-center text-7xl font-light text-text-muted/40">
-          {product.thumbLetter}
-        </div>
+      <div className="relative aspect-[4/5] bg-surface-2 overflow-hidden">
+        <img
+          src={productImage(product.axes.category, product.axes.subCategory, product.id, 0, { name: product.name, slug: product.slug })}
+          alt={product.name}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1">
           {product.badges.map((b) => (
             <span

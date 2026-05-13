@@ -13,6 +13,7 @@ import { brandById } from '@/data/brands'
 import { coupons } from '@/data/coupons'
 import { EmptyState } from '@/components/states'
 import { formatKRW } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 export default function CartPage() {
   const router = useRouter()
@@ -90,8 +91,12 @@ export default function CartPage() {
                 id={`cart-row-${item.productId}-${item.option.replace(/[^a-zA-Z0-9-]/g, '_')}`}
                 className="flex gap-3 rounded-lg border bg-surface p-4"
               >
-                <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-md bg-surface-2 text-3xl font-light text-text-muted/50">
-                  {product.thumbLetter}
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-surface-2">
+                  <img
+                    src={productImage(product.axes.category, product.axes.subCategory, product.id, 0, { name: product.name, slug: product.slug })}
+                    alt={product.name}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col gap-1">
                   <p className="text-[11px] uppercase tracking-wide text-text-muted">{brand?.name}</p>

@@ -1,4 +1,48 @@
 import type { Brand } from '@/lib/types'
+import {
+  sofa,
+  bed,
+  wardrobe,
+  dining,
+  desk,
+  interior,
+  decor,
+  rug,
+  lamp,
+  bench,
+  plant,
+  bookshelf,
+  SUB_LIVING_SOFA,
+} from '@/lib/imagePool'
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+function hash(s: string): number {
+  let h = 0
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0
+  return Math.abs(h)
+}
+
+function pickByDesc(slug: string, desc: string): string {
+  const t = desc.toLowerCase()
+  let pool: readonly string[]
+  if (/(러그|rug|패브릭|커튼)/.test(t)) pool = rug
+  else if (/(램프|조명|lighting|라이팅|간접)/.test(t)) pool = lamp
+  else if (/(플랜트|화분|잡화|트레이)/.test(t)) pool = plant
+  else if (/(벤치|가변|폴드|접)/.test(t)) pool = [...interior, ...decor]
+  else if (/(미러|아치)/.test(t)) pool = [...wardrobe, ...decor]
+  else if (/(옷장|장롱|wardrobe|closet|드레서|dresser)/.test(t)) pool = wardrobe
+  else if (/(매트리스|침대|침실|bed|sleep|키즈|아동|kids)/.test(t)) pool = bed
+  else if (/(다이닝|식탁|dining|주방|kitchen|팬트리|pantry|도마|티 테이블|라운드)/.test(t)) pool = dining
+  else if (/(소파|거실|sofa|리클라이너|모듈 소파|패브릭 소파|컴포트|좌식|라운지)/.test(t)) pool = SUB_LIVING_SOFA
+  else if (/(책상|데스크|사무|서재|재택|워크룸|홈오피스)/.test(t)) pool = desk
+  else if (/(책장|bookshelf|서가)/.test(t)) pool = bookshelf
+  else if (/(현관|복도|발코니|작은 공간|소형|모듈|아카이브)/.test(t)) pool = desk
+  else if (/(디자이너|모던|컨템포러리|메탈|석재|인더스트리얼|미니멀|북유럽)/.test(t)) pool = interior
+  else pool = interior
+  const idx = hash(slug) % pool.length
+  return `${BASE}/images/${pool[idx]}.jpg`
+}
 
 const partnerNames: Array<{ slug: string; name: string; desc: string }> = [
   { slug: 'maholn', name: '마홀앤', desc: '거실·침실의 따뜻한 호흡을 담는 가구. 자체 브랜드, 마이크로사이트 운영.' },
@@ -41,6 +85,7 @@ export const brands: Brand[] = partnerNames.map((p, i) => ({
   description: p.desc,
   primaryColor: i === 0 ? '#1F1E1B' : ['#5C4632', '#7A6A4F', '#3F3A33', '#A89272'][i % 4],
   logoLetter: p.name.charAt(0),
+  imageUrl: pickByDesc(p.slug, p.desc),
   partnerUserIds: i < 4 ? [`user-partner-${i + 1}`] : [],
 }))
 

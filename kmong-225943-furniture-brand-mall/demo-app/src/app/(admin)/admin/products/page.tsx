@@ -10,6 +10,7 @@ import { brandById } from '@/data/brands'
 import { useAuth } from '@/lib/contexts/auth'
 import { EmptyState } from '@/components/states'
 import { formatKRW, cn } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 const categories = ['전체', '침실', '거실', '주방', '수납', '사무용', '학생']
 const sortOptions = [
@@ -143,8 +144,8 @@ export default function AdminProductsPage() {
                   <tr key={p.id} className="border-t">
                     <td className="px-3 py-2">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-surface-2 text-base font-light text-text-muted/60">
-                          {p.thumbLetter}
+                        <div className="relative h-9 w-9 overflow-hidden rounded-md bg-surface-2">
+                          <img src={productImage(p.axes.category, p.axes.subCategory, p.id, 0, { name: p.name, slug: p.slug })} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
                         </div>
                         <div>
                           <Link href={`/products/${p.slug}`} className="font-medium text-text hover:underline">{p.name}</Link>

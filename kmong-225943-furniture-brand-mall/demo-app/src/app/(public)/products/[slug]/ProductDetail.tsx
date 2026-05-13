@@ -15,6 +15,7 @@ import { useCart } from '@/lib/contexts/cart'
 import { usePartnerOverrides } from '@/lib/contexts/partnerOverrides'
 import { formatKRW, formatDate, cn } from '@/lib/utils'
 import { MediaGallery } from '@/components/MediaGallery'
+import { productGallery } from '@/lib/imagePath'
 import { TabsPanel } from '@/components/TabsPanel'
 import { StarRating, RatingDistribution } from '@/components/StarRating'
 import { ShippingCalculator } from '@/components/ShippingCalculator'
@@ -127,7 +128,7 @@ export function ProductDetail({ product: original }: Props) {
       </nav>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        <MediaGallery letters={product.galleryLetters} alt={product.name} />
+        <MediaGallery images={productGallery(product.axes.category, product.axes.subCategory, product.id, 5, { name: product.name, slug: product.slug })} alt={product.name} />
 
         <div className="flex flex-col gap-5">
           <div>

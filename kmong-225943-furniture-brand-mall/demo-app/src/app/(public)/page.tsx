@@ -32,7 +32,7 @@ export default function HomePage() {
         cap="2026 SPRING COLLECTION"
         heading="거실의 호흡을 다시"
         subheading="Warm Living 26SS, 마홀앤 큐레이션"
-        description="30개 조합사가 함께 빚어낸 봄의 거실. 컬렉션 페이지에서 다축 필터로 즉시 좁히거나, 브랜드 단위로 천천히 결을 비교하세요."
+        description="30개 조합사가 함께 빚어낸 봄의 거실. 마홀앤 큐레이션과 시즌 컬렉션을 한 호흡으로 정리했습니다."
         ctas={[
           { href: '/collections/warm-living-26ss', label: 'Warm Living 보기', variant: 'primary' },
           { href: '/products', label: '전체 카탈로그', variant: 'ghost' },
@@ -69,7 +69,7 @@ export default function HomePage() {
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-muted">EXPLORE COLLECTIONS</p>
             <h2 className="mt-1 text-2xl font-semibold tracking-tight text-text">이번 주 컬렉션</h2>
-            <p className="mt-1 text-sm text-text-muted">컬렉션 페이지 안에서 다축 필터로 즉시 좁힐 수 있습니다.</p>
+            <p className="mt-1 text-sm text-text-muted">시즌·테마 단위로 정리된 이번 주 컬렉션입니다.</p>
           </div>
           <Link href="/collections" className="text-xs text-accent hover:underline">전체 보기</Link>
         </header>

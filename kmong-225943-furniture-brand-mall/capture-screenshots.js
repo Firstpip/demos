@@ -8,12 +8,19 @@ const fs = require('fs');
 const BASE = process.env.BASE_URL || 'http://localhost:4943';
 const OUT = path.join(__dirname, 'screenshots');
 const STORAGE_KEY = 'kmong225943:auth';
+const CART_STORAGE_KEY = 'kmong225943:cart';
 const PRESETS = {
   guest:   { userId: 'user-guest',     role: 'guest' },
   member:  { userId: 'user-member-1',  role: 'member' },
   partner: { userId: 'user-partner-2', role: 'partner' },
   admin:   { userId: 'user-admin-1',   role: 'admin' },
 };
+const CART_SEED = [
+  { productId: 'prd-oakhaus-dining-table-1800', option: '오크|Q', qty: 1, unitPrice: 1450000 },
+  { productId: 'prd-maholn-oak-sofa-3s',         option: '오크|Q', qty: 1, unitPrice: 1890000 },
+  { productId: 'prd-raonwood-oak-bed',           option: '오크|Q', qty: 1, unitPrice: 1140000 },
+];
+const SEED_CART_FILES = new Set(['07-cart.png', '08-checkout.png']);
 
 const pages = [
   { file: '01-home.png',                  url: '/',                                                 role: 'guest' },
@@ -22,7 +29,7 @@ const pages = [
   { file: '04-products.png',              url: '/products/',                                  role: 'guest' },
   { file: '05-product-detail.png',        url: '/products/oakhaus-dining-table-1800/',        role: 'guest' },
   { file: '06-search.png',                url: '/search?q=오크',                              role: 'guest' },
-  { file: '07-cart.png',                  url: '/cart/',                                      role: 'guest' },
+  { file: '07-cart.png',                  url: '/cart/',                                      role: 'member' },
   { file: '08-checkout.png',              url: '/checkout/',                                  role: 'member' },
   { file: '09-sign-in.png',               url: '/sign-in/',                                   role: 'guest' },
   { file: '10-sign-up.png',               url: '/sign-up/',                                   role: 'guest' },
@@ -67,6 +74,12 @@ const pages = [
         lastRole = p.role;
       }
       const r = await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
+      if (SEED_CART_FILES.has(p.file)) {
+        await page.evaluate((key, val) => {
+          sessionStorage.setItem(key, val);
+        }, CART_STORAGE_KEY, JSON.stringify(CART_SEED));
+        await page.reload({ waitUntil: 'networkidle0', timeout: 45000 });
+      }
       const status = r ? r.status() : 0;
       await new Promise(r => setTimeout(r, 900));
       await page.screenshot({ path: target, fullPage: false });

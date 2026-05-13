@@ -7,6 +7,7 @@ import type { Product } from '@/lib/types'
 import { productById } from '@/data/products'
 import { brandById } from '@/data/brands'
 import { formatKRW, cn } from '@/lib/utils'
+import { lookbookImage } from '@/lib/imagePath'
 
 interface Hotspot { x: number; y: number; productId: string; label: string }
 
@@ -31,13 +32,16 @@ export function LookbookHero({ letter, title, subtitle, hotspots, slug, onQuickV
       className="relative overflow-hidden rounded-lg border bg-surface-2"
       style={{ aspectRatio: '16 / 9' }}
     >
-      <div className="flex h-full items-center justify-center text-[180px] font-light text-text-muted/30">
-        {letter}
-      </div>
-      <div className="absolute inset-x-6 top-6 max-w-md text-text">
-        <p className="text-xs font-medium uppercase tracking-wide text-text-muted">Collection</p>
+      <img
+        src={lookbookImage(slug)}
+        alt={title}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+      <div className="absolute inset-x-6 top-6 max-w-md text-white drop-shadow">
+        <p className="text-xs font-medium uppercase tracking-wide text-white/80">Collection</p>
         <h1 className="mt-1 text-2xl font-semibold">{title}</h1>
-        <p className="mt-1 text-sm text-text-muted">{subtitle}</p>
+        <p className="mt-1 text-sm text-white/85">{subtitle}</p>
       </div>
       {hotspots.map((h, i) => (
         <button

@@ -9,6 +9,7 @@ export interface Brand {
   primaryColor: string
   logoEmoji?: never
   logoLetter: string
+  imageUrl: string
   partnerUserIds: string[]
 }
 

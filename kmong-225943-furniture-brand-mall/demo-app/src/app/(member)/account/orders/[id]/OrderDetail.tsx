@@ -10,6 +10,7 @@ import { OrderStatusStepper } from '@/components/OrderStatusStepper'
 import { DeliverySimulator } from '@/components/DeliverySimulator'
 import { useRewards } from '@/lib/contexts/rewards'
 import { formatKRW, formatDate } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 export function OrderDetail({ order }: { order: Order }) {
   const { entries, balanceForUser } = useRewards()
@@ -55,8 +56,8 @@ export function OrderDetail({ order }: { order: Order }) {
             if (!p) return null
             return (
               <div key={`${it.productId}-${it.option}`} className="flex gap-3 rounded-lg border bg-surface p-4">
-                <div className="flex h-20 w-20 items-center justify-center rounded-md bg-surface-2 text-3xl font-light text-text-muted/50">
-                  {p.thumbLetter}
+                <div className="relative h-20 w-20 overflow-hidden rounded-md bg-surface-2">
+                  <img src={productImage(p.axes.category, p.axes.subCategory, p.id, 0, { name: p.name, slug: p.slug })} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col gap-0.5">
                   <p className="text-[11px] uppercase tracking-wide text-text-muted">{brand?.name}</p>
