@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: '가구몰 — 30개 조합사 통합 쇼핑몰',
-  description: '가구전문 브랜드 통합 쇼핑몰. 다축 필터·배송 자동 보상·콘텐츠 모듈 재사용·조합사 권한 분리 CMS 데모.',
+  description: '가구전문 브랜드 통합 쇼핑몰. 컬렉션·룩북·브랜드 셋업과 배송 예약·자동 보상·조합사 권한 분리 CMS 흐름을 시연하는 데모.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

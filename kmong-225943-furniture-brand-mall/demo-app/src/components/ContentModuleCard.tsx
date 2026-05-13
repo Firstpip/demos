@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import type { ContentModule } from '@/lib/types'
 import { cn } from '@/lib/utils'
+import { moduleImage } from '@/lib/imagePath'
 
 const styleByType: Record<ContentModule['type'], string> = {
   'lookbook-card': 'bg-surface',
@@ -16,12 +17,14 @@ export function ContentModuleCard({ module }: { module: ContentModule }) {
     module.ctaHref ? <Link href={module.ctaHref} className={props.className}>{props.children}</Link> : <div className={props.className}>{props.children}</div>
 
   return (
-    <Wrapper className={cn('group flex h-full flex-col gap-3 rounded-lg border p-5 transition hover:shadow-md', styleByType[module.type])}>
-      <div className={cn(
-        'flex h-16 w-16 items-center justify-center rounded-md text-3xl font-light',
-        isBanner ? 'bg-primary-fg/10 text-primary-fg' : 'bg-surface-2 text-text-muted',
-      )}>
-        {module.letter}
+    <Wrapper className={cn('group flex h-full flex-col gap-3 rounded-lg border p-5 transition hover:shadow-md overflow-hidden', styleByType[module.type])}>
+      <div className="relative h-32 w-full overflow-hidden rounded-md bg-surface-2">
+        <img
+          src={moduleImage(module.id, module.type)}
+          alt={module.title}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="flex flex-1 flex-col gap-1.5">
         <p className={cn('text-sm font-semibold', isBanner ? 'text-primary-fg' : 'text-text')}>{module.title}</p>

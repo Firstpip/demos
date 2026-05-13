@@ -96,13 +96,12 @@ export function MegaMenu({ label = '카테고리' }: Props) {
                     )}
                     style={{ backgroundColor: accent + '18' }}
                   >
-                    <span
+                    <img
+                      src={node.imageUrl}
+                      alt={node.category}
                       aria-hidden
-                      className="absolute right-2 top-1 select-none text-[88px] font-light leading-none transition group-hover:scale-105"
-                      style={{ color: accent + '88' }}
-                    >
-                      {node.letter}
-                    </span>
+                      className="absolute inset-0 h-full w-full object-cover opacity-30 transition group-hover:opacity-45 group-hover:scale-105"
+                    />
                     <div className="relative">
                       <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-text-muted">CATEGORY</p>
                     </div>

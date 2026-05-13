@@ -135,12 +135,8 @@ export default function AdminBrandsPage() {
                   <tr key={b.id} id={`admin-brand-row-${b.slug}`} className="border-t">
                     <td className="px-3 py-2">
                       <div className="flex items-center gap-2">
-                        <span
-                          aria-hidden
-                          className="flex h-9 w-9 items-center justify-center rounded-md text-base font-light"
-                          style={{ backgroundColor: b.primaryColor + '22', color: b.primaryColor }}
-                        >
-                          {b.logoLetter}
+                        <span className="relative block h-9 w-9 shrink-0 overflow-hidden rounded-md">
+                          <img src={b.imageUrl} alt={b.name} className="absolute inset-0 h-full w-full object-cover" />
                         </span>
                         <div>
                           <Link href={`/brands/${b.slug}`} className="font-medium text-text hover:underline">{b.name}</Link>

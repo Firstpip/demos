@@ -99,7 +99,7 @@ export function FilterPanel({ source, state, onChange }: PanelProps) {
   }
 
   return (
-    <aside aria-label="다축 필터" className="rounded-lg border bg-surface p-4">
+    <aside aria-label="상품 필터" className="rounded-lg border bg-surface p-4">
       <div className="mb-3 flex items-center justify-between">
         <p className="text-sm font-semibold text-text">필터</p>
         <button

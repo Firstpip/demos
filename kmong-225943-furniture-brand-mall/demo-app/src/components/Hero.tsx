@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { interiorImage } from '@/lib/imagePath'
 
 interface Cta {
   href: string
@@ -63,15 +64,11 @@ export function Hero({ cap, heading, subheading, description, ctas, heroLetter, 
           )}
         </div>
         <div className="relative hidden h-[420px] items-center justify-center overflow-hidden rounded-lg lg:flex">
-          <span
-            className={
-              'select-none text-[280px] font-light leading-none ' +
-              (isDark ? 'text-primary-fg/15' : 'text-text-muted/25')
-            }
-            aria-hidden
-          >
-            {heroLetter}
-          </span>
+          <img
+            src={interiorImage(heroLetter + heading)}
+            alt={heading}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         </div>
       </div>
     </section>

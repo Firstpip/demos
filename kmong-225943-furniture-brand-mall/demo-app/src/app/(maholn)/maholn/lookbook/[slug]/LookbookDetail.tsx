@@ -10,6 +10,7 @@ import { ProductCard } from '@/components/ProductCard'
 import { ContentModuleCard } from '@/components/ContentModuleCard'
 import { contentModules } from '@/data/contentModules'
 import { lookbooks } from '@/data/lookbooks'
+import { lookbookImage } from '@/lib/imagePath'
 
 interface Props {
   lookbook: Lookbook
@@ -120,8 +121,8 @@ export function LookbookDetail({ lookbook, lookbookProducts }: Props) {
                 href={`/maholn/lookbook/${l.slug}`}
                 className="group flex flex-col overflow-hidden border border-[var(--maholn-text)]/10 bg-[var(--maholn-bg)]"
               >
-                <div className="flex aspect-[4/5] items-center justify-center bg-[var(--maholn-text)]/5 text-[100px] font-light text-[var(--maholn-text)]/30">
-                  {l.heroLetter}
+                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--maholn-text)]/5">
+                  <img src={lookbookImage(l.slug)} alt={l.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="border-t border-[var(--maholn-text)]/10 p-4">
                   <p className="text-[11px] uppercase tracking-wide text-[var(--maholn-text)]/60">{l.publishedAt}</p>

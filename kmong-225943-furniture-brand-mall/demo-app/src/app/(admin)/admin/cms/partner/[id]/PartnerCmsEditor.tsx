@@ -12,6 +12,7 @@ import { useAuth } from '@/lib/contexts/auth'
 import { usePermissionDenied } from '@/components/PermissionDeniedModal'
 import { cmsAuditLogs, logsByPartner } from '@/data/cmsAuditLogs'
 import { formatKRW, cn } from '@/lib/utils'
+import { productImage } from '@/lib/imagePath'
 
 interface Props {
   brand: Brand
@@ -291,8 +292,11 @@ function CurationSection({ brandSlug, brandId, products, log }: CurationSectionP
         <ul className="space-y-1.5">
           {curatedProducts.map((p) => (
             <li key={p.id} className="flex items-center gap-2 rounded-md border bg-surface-2 px-3 py-2 text-sm">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-surface text-base font-light text-text-muted/60">
-                {ov.thumbs[p.id] ?? p.thumbLetter}
+              <div className="relative h-8 w-8 overflow-hidden rounded-md bg-surface">
+                <img src={productImage(p.axes.category, p.axes.subCategory, p.id, 0, { name: p.name, slug: p.slug })} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+                {ov.thumbs[p.id] && (
+                  <span className="absolute bottom-0 right-0 rounded-tl bg-surface/95 px-1 text-[9px] font-medium leading-tight text-text">{ov.thumbs[p.id]}</span>
+                )}
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-text">{p.name}</p>
@@ -426,8 +430,11 @@ function AddProductsDialog({ brandId, brandSlug, candidates, log }: AddProductsD
                         onClick={(e) => e.stopPropagation()}
                         aria-label={p.name}
                       />
-                      <div className="flex h-8 w-8 items-center justify-center rounded-md bg-surface text-base font-light text-text-muted/60">
-                        {ov.thumbs[p.id] ?? p.thumbLetter}
+                      <div className="relative h-8 w-8 overflow-hidden rounded-md bg-surface">
+                        <img src={productImage(p.axes.category, p.axes.subCategory, p.id, 1, { name: p.name, slug: p.slug })} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+                        {ov.thumbs[p.id] && (
+                          <span className="absolute bottom-0 right-0 rounded-tl bg-surface/95 px-1 text-[9px] font-medium leading-tight text-text">{ov.thumbs[p.id]}</span>
+                        )}
                       </div>
                       <div className="flex-1">
                         <p className="text-sm font-medium text-text">{p.name}</p>

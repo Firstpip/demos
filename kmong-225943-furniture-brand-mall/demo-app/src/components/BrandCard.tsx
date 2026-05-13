@@ -14,13 +14,21 @@ export function BrandCard({ brand }: Props) {
       href={`/brands/${brand.slug}`}
       className="group flex flex-col overflow-hidden rounded-lg border bg-surface transition hover:shadow-md"
     >
-      <div
-        className="relative flex aspect-[16/10] items-center justify-center"
-        style={{ backgroundColor: brand.primaryColor + '22' }}
-      >
+      <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
+        <img
+          src={brand.imageUrl}
+          alt={brand.name}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 transition group-hover:opacity-30"
+          style={{ background: `linear-gradient(180deg, transparent 40%, ${brand.primaryColor}55 100%)` }}
+        />
         <span
           aria-hidden
-          className="text-[88px] font-light"
+          className="absolute left-3 bottom-3 rounded-md bg-surface/95 px-2 py-1 text-base font-light"
           style={{ color: brand.primaryColor }}
         >
           {brand.logoLetter}

@@ -9,6 +9,7 @@ import { RichTextEditor } from '@/components/RichTextEditor'
 import { contentModules } from '@/data/contentModules'
 import type { ContentModule } from '@/lib/types'
 import { cn } from '@/lib/utils'
+import { moduleImage } from '@/lib/imagePath'
 
 const typeLabel: Record<ContentModule['type'], string> = {
   'lookbook-card': '룩북 카드',
@@ -61,7 +62,9 @@ export default function AdminCmsPage() {
               <span className="text-[10px] text-text-muted">{m.id}</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-md bg-surface-2 text-2xl font-light text-text-muted/60">{m.letter}</span>
+              <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-md bg-surface-2">
+                <img src={moduleImage(m.id, m.type)} alt={m.title} className="absolute inset-0 h-full w-full object-cover" />
+              </span>
               <div>
                 <p className="text-sm font-semibold text-text">{m.title}</p>
                 <p className="mt-1 line-clamp-2 text-xs text-text-muted">{m.body}</p>

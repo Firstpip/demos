@@ -5,6 +5,7 @@ import { products } from '@/data/products'
 import { contentModules } from '@/data/contentModules'
 import { ContentModuleCard } from '@/components/ContentModuleCard'
 import { ProductCard } from '@/components/ProductCard'
+import { lookbookImage } from '@/lib/imagePath'
 
 export default function MaholnHomePage() {
   const maholnProducts = products.filter((p) => p.brandId === 'brand-maholn')
@@ -64,8 +65,13 @@ export default function MaholnHomePage() {
               href={`/maholn/lookbook/${lb.slug}`}
               className="group flex flex-col overflow-hidden border border-[var(--maholn-text)]/10 bg-[var(--maholn-bg)]"
             >
-              <div className="flex aspect-[4/5] items-center justify-center bg-[var(--maholn-text)]/5 text-[120px] font-light text-[var(--maholn-text)]/30">
-                {lb.heroLetter}
+              <div className="relative aspect-[4/5] overflow-hidden bg-[var(--maholn-text)]/5">
+                <img
+                  src={lookbookImage(lb.slug)}
+                  alt={lb.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
               <div className="border-t border-[var(--maholn-text)]/10 p-4">
                 <p className="text-[11px] uppercase tracking-wide text-[var(--maholn-text)]/60">{lb.publishedAt}</p>

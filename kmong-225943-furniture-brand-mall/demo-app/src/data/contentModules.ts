@@ -17,7 +17,7 @@ export const contentModules: ContentModule[] = [
   { id: 'cm-14', type: 'lookbook-card', title: 'Soft Comfort 26SS', body: '오래 머무는 거실의 부드러운 패브릭.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/soft-comfort-26ss/', letter: 'S', usedIn: ['home', 'category'] },
   { id: 'cm-15', type: 'lookbook-card', title: 'Heritage Oak 26SS', body: '국내산 오크 원목 정통 라인.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/heritage-oak-26ss/', letter: 'H', usedIn: ['home', 'product-detail'] },
   { id: 'cm-16', type: 'banner', title: '마홀앤 단골 7% 쿠폰', body: 'MAHOLNVIP 코드, 25만원 이상 주문 시 7% 할인.', ctaLabel: '쿠폰 받기', letter: '%', usedIn: ['maholn-home'] },
-  { id: 'cm-17', type: 'review-quote', title: '"필터 한 번에 후보가 정리됐어요"', body: '컬렉션 페이지의 다축 필터 후기. "원목 + 오크 컬러 + 2주 내 배송으로 좁혔더니 정말 후보가 3개로 줄었습니다." — 이도원 님', ctaLabel: '필터 시연 가이드', letter: '篩', usedIn: ['home'] },
+  { id: 'cm-17', type: 'review-quote', title: '"한 번에 후보가 정리됐어요"', body: '"원목 + 오크 컬러 + 2주 내 배송 조건으로 후보가 3개로 줄었습니다." — 이도원 님 컬렉션 페이지 후기.', ctaLabel: '쇼핑 가이드 보기', letter: '篩', usedIn: ['home'] },
   { id: 'cm-18', type: 'story', title: '조합사가 직접 운영하는 페이지', body: '4월부터 30개 조합사 운영자가 자기 브랜드 페이지의 가격·이미지를 직접 관리합니다. 본체 운영자 승인 없이 즉시 반영.', ctaLabel: '정책 보기', letter: '管', usedIn: ['home'] },
   { id: 'cm-19', type: 'lookbook-card', title: 'Family Calm 26SS', body: '가족이 함께 쉬는 침실·키즈룸.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/family-calm-26ss/', letter: 'F', usedIn: ['category'] },
   { id: 'cm-20', type: 'lookbook-card', title: 'Modern Line 26SS', body: '단정한 선과 메탈·우드 결합.', ctaLabel: '컬렉션 보기', ctaHref: '/collections/modern-line-26ss/', letter: 'M', usedIn: ['category'] },
