@@ -1,0 +1,13 @@
+{
+  "title": "새봄웍스 시연 데모",
+  "description": "웹사이트 개발 공고 지원용 시연 데모. 사용자 화면과 관리자 화면이 같은 데이터로 이어진다.",
+  "pages": 15,
+  "techStack": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind"
+  ],
+  "category": "other",
+  "color": "",
+  "thumbnail": "home.png"
+}
